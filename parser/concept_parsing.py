@@ -16,10 +16,10 @@ test_data_path = pathlib.Path(__file__).parent.parent.joinpath('basf_test_data')
 
 
 #%%
-# Figure out where in the documents the actual texts are
+# Where in the documents are the meaningful texts?
 def get_concepts(document_directory: pathlib.Path):
     """
-    Gets all concepts in a document
+    Gets positions of all concepts in a document, indexed by the section the concept appears in
     :param document_directory: directory containing the docnorm and semantic annotation files
     :return: dictionary {section: [[start, end]]}
     """
@@ -41,7 +41,7 @@ for document_directory in test_data_path.iterdir():
     if document_directory.is_dir():
         concepts.append(get_concepts(document_directory))
 
-# compute tensor with padding from dictionaries
+# compute tensor [document x section x concept x start/end] with concept padding from dictionaries
 max_concepts_per_document_and_section = max(
     len(mentions) for concept_dict in concepts for mentions in concept_dict.values())
 sections_with_concepts = list({section for concept_dict in concepts for section in concept_dict.keys()})
@@ -98,10 +98,10 @@ text_tag_candidates = [tag for tag_list in text_tag_candidate_dict.values() for 
 
 def get_tag_positions(document_directory: pathlib.Path, tag_names: List):
     """
-    gets earliest first, latest last position and number of appearances of each specified tag
+    gets earliest first and latest last position of each specified tag in specified document
     :param document_directory: directory containing the docnorm and semantic annotation files
     :param tag_names: names of tags for which to get the information
-    :return: dictionary list of lists with one entry for each tag
+    :return: dictionary {tag: [start, end, n_appearances]}
     """
     with open(next(f for f in document_directory.iterdir() if f.name.startswith('oc_docnorm'))) as f:
         data_1 = json.load(f)
@@ -156,7 +156,8 @@ def get_text_from_positions(document_directory: pathlib.Path, tag_positions):
     """
     extracts the texts at the provided positions from the provided document
     :param document_directory: directory containing the docnorm and semantic annotation files
-    :return: set of all tag names
+    :param tag_positions: list of tuples containing the start- end end positions of each text section to extract
+    :return: list of texts at the provided positions
     """
     with open(next(f for f in document_directory.iterdir() if f.name.startswith('oc_docnorm'))) as f:
         data_1 = json.load(f)
@@ -180,10 +181,9 @@ for document_directory in test_data_path.iterdir():
 
 def get_sentence_positions(document_directory: pathlib.Path):
     """
-    gets earliest first, latest last position and number of appearances of each specified tag
+    gets positions of all sentences in the provided document
     :param document_directory: directory containing the docnorm and semantic annotation files
-    :param tag_names: names of tags for which to get the information
-    :return: dictionary list of lists with one entry for each tag
+    :return: list of lists with start and end position of each sentence
     """
     with open(next(f for f in document_directory.iterdir() if f.name.startswith('oc_semantic_annotation'))) as f:
         data_2 = json.load(f)
@@ -220,9 +220,9 @@ sentences_containing_concepts = []
 for i in range(sentence_positions.shape[0]):
     sentences_containing_concepts.append(np.any(
         (sentence_positions[i, :, np.newaxis, 0] <= concept_positions[i, np.newaxis, :, 0]) &
-        ((sentence_positions[i, :, np.newaxis, 1] >= concept_positions[i, np.newaxis, :, 1])), 1))
+        (sentence_positions[i, :, np.newaxis, 1] >= concept_positions[i, np.newaxis, :, 1]), 1))
 
-# Get the text of all sentences that contain concepts
+# Get the texts of all sentences that contain concepts
 parsed_sentences = []
 i = 0
 for document_directory in test_data_path.iterdir():
