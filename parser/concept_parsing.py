@@ -1,9 +1,9 @@
-from textwrap import wrap
 import base64
 import json
 import pathlib
+from textwrap import wrap
 from typing import List
-import pandas as pd
+
 import numpy as np
 
 #%%
@@ -13,7 +13,6 @@ ENCODING = 'UTF-16BE'
 #%%
 # Path to folder
 test_data_path = pathlib.Path(__file__).parent.parent.joinpath('basf_test_data')
-path = test_data_path.joinpath('AR106193A1')
 
 
 #%%
@@ -151,10 +150,11 @@ for section_i, section in enumerate(sections_with_concepts):
 
 
 #%%
+# What are the texts in tags that contain concepts?
 
-def get_tag_texts(document_directory: pathlib.Path, tag_positions):
+def get_text_from_positions(document_directory: pathlib.Path, tag_positions):
     """
-    Gets names of all tags appearing in the documents
+    extracts the texts at the provided positions from the provided document
     :param document_directory: directory containing the docnorm and semantic annotation files
     :return: set of all tag names
     """
@@ -171,5 +171,62 @@ text_tag_ids = [i for i, candidate in enumerate(text_tag_candidates) if candidat
 i = 0
 for document_directory in test_data_path.iterdir():
     if document_directory.is_dir():
-        tag_texts.append(get_tag_texts(document_directory, tag_positions[i, text_tag_ids, :2]))
+        tag_texts.append(get_text_from_positions(document_directory, tag_positions[i, text_tag_ids, :2]))
+        i += 1
+
+
+#%%
+# Which sentences contain concepts?
+
+def get_sentence_positions(document_directory: pathlib.Path):
+    """
+    gets earliest first, latest last position and number of appearances of each specified tag
+    :param document_directory: directory containing the docnorm and semantic annotation files
+    :param tag_names: names of tags for which to get the information
+    :return: dictionary list of lists with one entry for each tag
+    """
+    with open(next(f for f in document_directory.iterdir() if f.name.startswith('oc_semantic_annotation'))) as f:
+        data_2 = json.load(f)
+
+    sentences = []
+    for sentence in data_2['doc']['mparts'][0]['semantic_enrichment']['text_structure']['sentences']:
+        sentences.append([sentence['start'], sentence['end']])
+    return sentences
+
+
+# Get positions of all sentences for each document
+sentence_positions = []
+for document_directory in test_data_path.iterdir():
+    if document_directory.is_dir():
+        sentence_positions.append(get_sentence_positions(document_directory))
+max_sentences_per_document = max(len(sentences) for sentences in sentence_positions)
+for i, document in enumerate(sentence_positions):
+    sentence_positions[i] = document + (max_sentences_per_document - len(document)) * [[np.nan, np.nan]]
+sentence_positions = np.array(sentence_positions)
+
+# Get positions of all concepts for each document
+concept_positions = []
+for document in concepts:
+    document_concepts = []
+    for concept_list in document.values():
+        document_concepts.extend(concept_list)
+    concept_positions.append(document_concepts)
+max_concepts_per_document = max(len(concept_list) for concept_list in concept_positions)
+concept_positions = np.array(
+    [document + ((max_concepts_per_document - len(document)) * [[np.nan, np.nan]]) for document in concept_positions])
+
+# For each sentence in each document, figure out whether it contains a concept
+sentences_containing_concepts = []
+for i in range(sentence_positions.shape[0]):
+    sentences_containing_concepts.append(np.any(
+        (sentence_positions[i, :, np.newaxis, 0] <= concept_positions[i, np.newaxis, :, 0]) &
+        ((sentence_positions[i, :, np.newaxis, 1] >= concept_positions[i, np.newaxis, :, 1])), 1))
+
+# Get the text of all sentences that contain concepts
+parsed_sentences = []
+i = 0
+for document_directory in test_data_path.iterdir():
+    if document_directory.is_dir():
+        parsed_sentences.append(get_text_from_positions(
+            document_directory, sentence_positions[i, sentences_containing_concepts[i]]))
         i += 1
