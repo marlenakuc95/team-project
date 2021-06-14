@@ -1,0 +1,15 @@
+.idea
+/data/
+/lightning_logs/
+/logs/
+/model/
+/r52/
+/results/
+/runs/
+/data.py
+/experimental.py
+/experimental_lightning.py
+/importerscript.py
+/language_model.py
+/LICENSE
+/r52_loading_script.py
