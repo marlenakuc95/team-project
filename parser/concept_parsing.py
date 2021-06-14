@@ -5,6 +5,7 @@ from textwrap import wrap
 from typing import List
 
 import numpy as np
+from ParsedDocument import ParsedDocument
 
 #%%
 
@@ -230,3 +231,6 @@ for document_directory in test_data_path.iterdir():
         parsed_sentences.append(get_text_from_positions(
             document_directory, sentence_positions[i, sentences_containing_concepts[i]]))
         i += 1
+#%%
+# Example usage of ParsedDocument class:
+documents = [ParsedDocument(directory) for directory in test_data_path.iterdir() if directory.is_dir()]
