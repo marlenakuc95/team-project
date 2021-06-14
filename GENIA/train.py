@@ -45,8 +45,8 @@ def main():
     tokenizer = get_tokenizer()
 
     print('Load data')
-    train_path = pathlib.Path(__file__).absolute().parent.parent.joinpath('GENIA', 'genia_parsed_corpus_train.txt')
-    eval_path = pathlib.Path(__file__).absolute().parent.parent.joinpath('GENIA', 'genia_parsed_corpus_eval.txt')
+    train_path = pathlib.Path(__file__).absolute().parent.joinpath('genia_parsed_corpus_train.txt')
+    eval_path = pathlib.Path(__file__).absolute().parent.joinpath('genia_parsed_corpus_eval.txt')
     train_dataset = GeniaDataset(tokenizer=tokenizer, data_path=train_path)
     eval_dataset = GeniaDataset(tokenizer=tokenizer, data_path=eval_path)
 
@@ -79,4 +79,7 @@ def main():
         eval_dataset=eval_dataset
     )
 
+    print('Train')
     trainer.train()
+
+main()
