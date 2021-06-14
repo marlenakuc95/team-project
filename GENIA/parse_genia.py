@@ -14,7 +14,6 @@ def parse(path: pathlib, split_size: float):
     :return: path to parsed train set, path to parsed eval set
     """
     output = []
-    i = 0
     for file in path.iterdir():
         data = open(str(file))
         contents = data.read()
@@ -22,10 +21,6 @@ def parse(path: pathlib, split_size: float):
         sentences = soup.find('abstracttext').findChildren(recursive=False)
         for sen in sentences:
             output.append(sen.get_text())
-        i += 1
-
-        if i == 4:
-            break
 
     # Split into test and train file
     train_dataset, eval_dataset = train_test_split(output, test_size=0.25)
