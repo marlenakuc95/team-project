@@ -9,9 +9,6 @@ from ParsedDocument import ParsedDocument
 
 #%%
 
-ENCODING = 'UTF-16BE'
-
-#%%
 # Path to folder
 test_data_path = pathlib.Path(__file__).parent.parent.joinpath('basf_test_data')
 
