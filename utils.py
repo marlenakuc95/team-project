@@ -1,9 +1,15 @@
+from pathlib import Path
+
+DATA_DIR = Path('data')
+
+
 # noinspection PyPep8Naming
 class cached_property(object):
     """
     property for caching of attributes, code adapted from
     https://stackoverflow.com/questions/17330160/how-does-the-property-decorator-work
     """
+
     def __init__(self, fget, fset=None, fdel=None, name=None, doc=None):
         self.fget = fget
         self.fset = fset
