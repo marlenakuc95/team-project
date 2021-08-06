@@ -1,3 +1,4 @@
+import pathlib
 import re
 import urllib.parse
 from io import StringIO
@@ -13,7 +14,7 @@ EMAIL_ADDRESS = ''
 API_KEY = ''
 
 # other settings
-INPUT_TEXT_PATH = DATA_DIR.joinpath("small_sample.txt")
+INPUT_FILE_NAME = "sample.txt"
 DATA = {
     "SKR_API": True,
     # See Batch commands here: https://metamap.nlm.nih.gov/Docs/MM_2016_Usage.pdf
@@ -35,7 +36,8 @@ TITLE_END = 114
 OUTPUT_COLUMNS = ["document", "type", "score", "name", "CUI", "semantic type list", "trigger", "location", "positions",
                   "dummy"]
 TRIGGER_COLUMNS = ['short name', 'location', 'utterance', 'text', 'PoS', 'is_negated']
-RELEVANT_COLUMNS = ["document", "CUI", "start", "length"]
+IRRELEVANT_POS_TAGS = {"real_number", "word_numeral", "adv", "prep", "integer", "det", "conj", "percentage"}
+IRRELEVANT_TRIGGER_COLUMNS = ['location', 'utterance', 'is_negated']
 
 # we need a session for requests to allow batch service to recognize us when calling api for the second time
 session = requests.Session()
@@ -61,10 +63,11 @@ service_ticket = BeautifulSoup(
 ).find('body').text
 
 # make actual api call
+input_text_path = DATA_DIR.joinpath(INPUT_FILE_NAME)
 service_url = f'{GENERIC_BATCH_SERVICE_URL}?ticket={service_ticket}'
 session.post(
     url=service_url,
-    files={"UpLoad_File": open(INPUT_TEXT_PATH, 'r'), },
+    files={"UpLoad_File": open(input_text_path, 'r'), },
     data=DATA,
     headers={'Connection': "close"},
     allow_redirects=False, )
@@ -72,7 +75,7 @@ session.post(
 # call api twice because it only works this way (same in original java implementation)
 response = session.post(
     url=service_url,
-    files={"UpLoad_File": open(INPUT_TEXT_PATH, 'r'), },
+    files={"UpLoad_File": open(input_text_path, 'r'), },
     data=DATA)
 csv_text = re.sub(r'NOT DONE LOOP\n', '', response.text)
 
@@ -91,16 +94,19 @@ annotation_df = annotation_df.explode(column=['trigger', 'positions'])
 
 # split trigger into multiple columns
 annotation_df[TRIGGER_COLUMNS] = annotation_df['trigger'].str.extract(r'(.*)"-(.*)-(.*)-"(.*)"-(.*)-([01])')
+annotation_df = annotation_df.drop(columns=IRRELEVANT_TRIGGER_COLUMNS + ['trigger'])
+
+# remove concepts with irrelevant PoS tags
+annotation_df = annotation_df[~annotation_df['PoS'].isin(IRRELEVANT_POS_TAGS)]
 
 # explode concepts appearing multiple times in same utterance
 annotation_df.loc[annotation_df['positions'].str.contains(r'\['), 'positions'] = \
     annotation_df.loc[annotation_df['positions'].str.contains(r'\['), 'positions'].str[1:-1].str.split(r'\],\[')
 annotation_df = annotation_df.explode('positions')
 
-# extract start position of each mention
+# extract start position and length of each mention
 annotation_df['start'] = annotation_df['positions'].str.extract(r'(\d+)/.*').astype(int)
 annotation_df['length'] = annotation_df['positions'].str.extract(r'.*/(\d+)').astype(int)
-annotation_df = annotation_df.drop(columns='trigger')
+annotation_df = annotation_df.drop(columns='positions')
 
-# keep only relevant columns
-relevant_annotations = annotation_df[RELEVANT_COLUMNS]
+annotation_df.to_csv(DATA_DIR.joinpath('annotations').joinpath(f'annotations_{input_text_path.stem}.csv'), index=False)
