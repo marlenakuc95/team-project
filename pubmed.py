@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 ROOT = pathlib.Path(__file__).absolute().parent
+ENCODING = "utf-8"
 
 # Prepare folder for pubmed data storge
 pubmed_path = ROOT.joinpath("pubmed_dataset")
@@ -30,6 +31,7 @@ for url in file_tags:
 # Filter out .md5 files
 urls = [x for x in urls if not x.endswith('.md5')]
 
+
 # Process single file
 def parse_file(file_url):
     print(file_url)
@@ -48,19 +50,23 @@ def parse_file(file_url):
     # Parse Abstract
     tree = ET.parse(str(output_path)[:-3])
     root = tree.getroot()
+    output_schema = ''
     for PubmedArticle in root:
         try:
             abstract = PubmedArticle.find('MedlineCitation').find('Article').find('Abstract').find('AbstractText').text
             pubmed_id = PubmedArticle.find('PubmedData').find('ArticleIdList').find("ArticleId[@IdType='pubmed']").text
+            title = PubmedArticle.find('MedlineCitation').find('Article').find('ArticleTitle').text
 
-            # Save as text file
-            output_file = pathlib.Path(pubmed_path).joinpath("pubmed_parsed").joinpath(
-                "article_" + pubmed_id).with_suffix(".txt")
-            with open(str(output_file), 'w', encoding="utf-8") as f:
-                f.write(abstract)
+            output_schema = 'UI  - ' + pubmed_id + '\n' + 'TI  - ' + title + '\n' + 'ABS  - ' + abstract + '\n\n' + output_schema
 
         except AttributeError:
             pass
+
+    # Save as text file
+    output_file = pathlib.Path(pubmed_path).joinpath("pubmed_parsed").joinpath(
+            pathlib.Path(file_url).stem + '_parsed').with_suffix(".txt")
+    with open(str(output_file), 'w', encoding=ENCODING) as f:
+        f.write(output_schema)
 
     # Delete XML file
     file_to_rem = pathlib.Path(str(output_path)[:-3])
