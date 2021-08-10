@@ -1,4 +1,3 @@
-import pathlib
 import re
 import urllib.parse
 from io import StringIO
@@ -7,14 +6,14 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from utils import DATA_DIR
+from utils import DATA_DIR, ANNOTATIONS_DIR
 
 # before running, enter your credentials here:
 EMAIL_ADDRESS = ''
 API_KEY = ''
 
 # other settings
-INPUT_FILE_NAME = "sample.txt"
+INPUT_FILE_NAME = "pubmed21n0001.txt"
 DATA = {
     "SKR_API": True,
     # See Batch commands here: https://metamap.nlm.nih.gov/Docs/MM_2016_Usage.pdf
@@ -87,9 +86,14 @@ annotation_df = pd.read_csv(StringIO(csv_text), sep='|', header=None, names=OUTP
 # Remove abbreviations
 annotation_df = annotation_df[(annotation_df['type'] == 'MMI')].drop(columns='type')
 
+clean_annotations = annotation_df.copy()
+
 # explode concepts appearing multiple times in same document
 annotation_df['positions'] = annotation_df['positions'].str.split(';')
 annotation_df['trigger'] = annotation_df['trigger'].str[2:-1].str.split(',"')
+# remove annotations with corrupted position/trigger column
+annotation_df = annotation_df[(annotation_df['trigger'].apply(len) == annotation_df['positions'].apply(len))]
+
 annotation_df = annotation_df.explode(column=['trigger', 'positions'])
 
 # split trigger into multiple columns
@@ -109,4 +113,4 @@ annotation_df['start'] = annotation_df['positions'].str.extract(r'(\d+)/.*').ast
 annotation_df['length'] = annotation_df['positions'].str.extract(r'.*/(\d+)').astype(int)
 annotation_df = annotation_df.drop(columns='positions')
 
-annotation_df.to_csv(DATA_DIR.joinpath('annotations').joinpath(f'annotations_{input_text_path.stem}.csv'), index=False)
+annotation_df.to_csv(ANNOTATIONS_DIR.joinpath(f'annotations_{input_text_path.stem}.csv'), index=False)

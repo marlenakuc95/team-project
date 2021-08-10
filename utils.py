@@ -1,6 +1,7 @@
 from pathlib import Path
 
 DATA_DIR = Path('data')
+ANNOTATIONS_DIR = DATA_DIR.joinpath('annotations')
 
 
 # noinspection PyPep8Naming
