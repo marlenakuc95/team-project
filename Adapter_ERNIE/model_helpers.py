@@ -2,40 +2,43 @@ import pandas as pd
 import torch
 import numpy as np
 
+
 # Input text and the tokenizer, get the input ids, attentionmask and start_locations of each token (offsets)
 def get_ids_masks_offsets(text, tokenizer):
     encoding = tokenizer(text, padding=True, return_offsets_mapping=True)
     inputids = encoding['input_ids']
     attentionmask = encoding['attention_mask']
-    start_locs = [start for (start,end) in encoding['offset_mapping']]
+    start_locs = [start for (start, end) in encoding['offset_mapping']]
     return inputids, attentionmask, start_locs
+
 
 def get_token_rep(inputids, attentionmask, model):
     output = model(inputids, attentionmask)
     return output.last_hidden_state
 
+
 # Input path to receive gan embeddings as a dataframe
 def load_gan_embeddings(path):
-    gan_embeddings = pd.read_csv(path, header = None,nrows=500)
-    gan_embeddings.rename(columns={0: 'CUI'}, inplace = True)
-    gan_embeddings.set_index("CUI", inplace=True)
-    return gan_embeddings
+    return pd.read_csv(path, header=None, nrows=500, index_col=0)
+
 
 ######
 
 # Input annotations path and receive a dataframe of annotations
 def load_annotations(path):
-    annotations= pd.read_csv(path)
-    annotations.set_index("document", inplace = True)
+    annotations = pd.read_csv(path)
+    annotations.set_index("document", inplace=True)
     return annotations
+
 
 # Input annotations dataframe (coming from load_annotations) and document id, receive annotations of the
 # specified document as a list
 # Brings annotations of the specified document id
 def bring_annotations(annotations_df: pd.DataFrame, doc_id):
-    df = annotations_df.loc[doc_id,["CUI","start","length"]]
+    df = annotations_df.loc[doc_id, ["CUI", "start", "length"]]
     annot_list = df.values.tolist()
     return annot_list
+
 
 # Bring annotations of this specific cui.
 # We input output of bring_annotations
@@ -43,15 +46,15 @@ def bring_annotations(annotations_df: pd.DataFrame, doc_id):
 # make_matrix1_row_per_cui function as the second argument
 
 def annotations_of_this_cui(cui, annotations_list):
-    annotations_of_this_cui = [[cui_of_list, start, length] for [cui_of_list, start, length] in annotations_list if cui_of_list == cui]
+    annotations_of_this_cui = [[cui_of_list, start, length] for [cui_of_list, start, length] in annotations_list if
+                               cui_of_list == cui]
     return annotations_of_this_cui
-
 
 
 # Brings all the alignments as a set for the specific document_id.
 # We will know how many different alignments we have
 def all_alignments_set(annotations_df: pd.DataFrame, doc_id):
-    df = annotations_df.loc[doc_id,["CUI"]]
+    df = annotations_df.loc[doc_id, ["CUI"]]
     alignments_set = set([cui[0] for cui in df.values.tolist()])
     return alignments_set
 
@@ -72,7 +75,7 @@ def make_matrix1_row_per_cui(cui, annotations_of_this_cui, start_locs_of_tokens)
                 cui_alignments.append(1)
             else:
                 cui_alignments.append(-1)
-    return [cui,cui_alignments]
+    return [cui, cui_alignments]
 
 
 # This function will take the make_matrix1_row_per_cui functions outputs (as many as there are alignments)
@@ -80,13 +83,14 @@ def make_matrix1_row_per_cui(cui, annotations_of_this_cui, start_locs_of_tokens)
 # This is similar to matrix1 we discussed about
 # Outputs of the make_matrix1_row_per_cui functions should be input to this function to get the dataframe
 def make_df_from_matrix1_rows(list_of_matrix1_rows):
-    data ={}
+    data = {}
     for row in list_of_matrix1_rows:
         data[row[0]] = row[1]
     # Creates pandas DataFrame.
-    df = pd.DataFrame(data, index=[i for i in range(1,len(row[1])+1)])
+    df = pd.DataFrame(data, index=[i for i in range(1, len(row[1]) + 1)])
 
     return df
+
 
 #####
 
@@ -94,16 +98,15 @@ def make_df_from_matrix1_rows(list_of_matrix1_rows):
 # It will look up that specific cui's embedding and bring it as a series
 # We should apply this function to all cuis that we get from all_alignments_set function
 def make_matrix2_row_from_cui_embeds(embeddings, cui):
-    row = embeddings.loc[cui,:]
-    return [cui,list(row)]
+    row = embeddings.loc[cui, :]
+    return [cui, list(row)]
+
 
 def make_df_from_matrix2_rows(list_of_matrix1_rows):
-    data ={}
+    data = {}
     for row in list_of_matrix1_rows:
         data[row[0]] = row[1]
     print(data)
     # Creates pandas DataFrame.
-    df = pd.DataFrame(data, index=[i for i in range(1,len(row[1])+1)])
+    df = pd.DataFrame(data, index=[i for i in range(1, len(row[1]) + 1)])
     return df.T
-
-
