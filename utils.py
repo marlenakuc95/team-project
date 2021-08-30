@@ -1,6 +1,6 @@
 from pathlib import Path
 
-DATA_DIR = Path('data')
+DATA_DIR = Path(__file__).parent.joinpath('data')
 ANNOTATIONS_DIR = DATA_DIR.joinpath('annotations')
 
 
