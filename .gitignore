@@ -1,5 +1,4 @@
 .idea
-/data/
 /lightning_logs/
 /logs/
 /model/
@@ -13,3 +12,10 @@
 /language_model.py
 /LICENSE
 /r52_loading_script.py
+/data/annotated_example.txt
+/data/annotated_example_json.txt
+/data/embeddings.csv.zip
+/data/formal_tagger.out
+/data/umls-2021AA-metathesaurus.zip
+/data/test_data/
+/data/wikitext-2/

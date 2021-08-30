@@ -1,0 +1,888 @@
+document,name,CUI,semantic type list,short name,text,PoS,start,length
+97479605,Result,C1274040,[ftcn],Outcome,outcome,noun,1412,7
+97479605,Result,C1274040,[ftcn],Outcome,outcome,noun,106,7
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,CBF,noun,1351,3
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,CBF,noun,1306,3
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,CBF,noun,1198,3
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,CBF,noun,903,3
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,CBF,noun,301,3
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,Cerebral blood flow,noun,121,19
+97479605,Cerebral Blood Flow,C0428714,[fndg],Cerebral Blood Flow,cerebral blood flow,noun,37,19
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,CBF,noun,1351,3
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,CBF,noun,1306,3
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,CBF,noun,1198,3
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,CBF,noun,903,3
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,CBF,noun,301,3
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,Cerebral blood flow,noun,121,19
+97479605,Cerebral Blood Flow Assessment,C4722226,[diap],Cerebral Blood Flow,cerebral blood flow,noun,37,19
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,CBF,noun,1351,3
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,CBF,noun,1306,3
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,CBF,noun,1198,3
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,CBF,noun,903,3
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,CBF,noun,301,3
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,Cerebral blood flow,noun,121,19
+97479605,Cerebral blood flow radionuclide study,C0373440,[diap],cerebral blood flow,cerebral blood flow,noun,37,19
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,CBF,noun,1351,3
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,CBF,noun,1306,3
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,CBF,noun,1198,3
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,CBF,noun,903,3
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,CBF,noun,301,3
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,Cerebral blood flow,noun,121,19
+97479605,Cerebrovascular Circulation,C0007818,[ortf],Cerebral Blood Flow,cerebral blood flow,noun,37,19
+97479605,Worse,C1457868,[fndg],Worse,worse,adj,1378,5
+97479605,Worse,C1457868,[fndg],Worse,worse,adj,73,5
+97479605,Worsening pattern,C0332271,[qlco],worse,worse,adj,1378,5
+97479605,Worsening pattern,C0332271,[qlco],worse,worse,adj,73,5
+97479605,Neurologic (qualifier value),C0205494,[qlco],NEUROLOGIC,neurologic,adj,1384,10
+97479605,Neurologic (qualifier value),C0205494,[qlco],NEUROLOGIC,neurologic,adj,946,10
+97479605,Neurologic (qualifier value),C0205494,[qlco],NEUROLOGIC,neurologic,adj,1032,10
+97479605,Neurologic (qualifier value),C0205494,[qlco],NEUROLOGIC,neurologic,adj,842,10
+97479605,Neurologic (qualifier value),C0205494,[qlco],NEUROLOGIC,neurologic,adj,735,10
+97479605,Neurologic (qualifier value),C0205494,[qlco],NEUROLOGIC,neurologic,adj,95,10
+97479605,Neurological observations,C0422837,[fndg],Neurologic,neurologic,adj,1384,10
+97479605,Neurological observations,C0422837,[fndg],Neurologic,neurologic,adj,946,10
+97479605,Neurological observations,C0422837,[fndg],Neurologic,neurologic,adj,1032,10
+97479605,Neurological observations,C0422837,[fndg],Neurologic,neurologic,adj,842,10
+97479605,Neurological observations,C0422837,[fndg],Neurologic,neurologic,adj,735,10
+97479605,Neurological observations,C0422837,[fndg],Neurologic,neurologic,adj,95,10
+97479605,Childhood,C0231335,[tmco],Childhood,childhood,noun,1212,9
+97479605,Childhood,C0231335,[tmco],Childhood,childhood,noun,936,9
+97479605,Childhood,C0231335,[tmco],Childhood,childhood,noun,1022,9
+97479605,Childhood,C0231335,[tmco],Childhood,childhood,noun,372,9
+97479605,Childhood,C0231335,[tmco],Childhood,childhood,noun,79,9
+97479605,High,C0205250,[qlco],Higher,higher,adj,1344,6
+97479605,High,C0205250,[qlco],Higher,Higher,adj,1299,6
+97479605,High,C0205250,[qlco],Higher,Higher,adj,21,6
+97479605,"Infant, Newborn",C0021289,[aggp],Neonatal,neonatal,adj,1189,8
+97479605,"Infant, Newborn",C0021289,[aggp],Neonatal,neonatal,adj,894,8
+97479605,"Infant, Newborn",C0021289,[aggp],Newborn Infants,newborn infants,noun,150,15
+97479605,"Infant, Newborn",C0021289,[aggp],Neonatal,neonatal,adj,28,8
+97479605,Neonatal (qualifier value),C2939425,[tmco],neonatal,neonatal,adj,1189,8
+97479605,Neonatal (qualifier value),C2939425,[tmco],neonatal,neonatal,adj,894,8
+97479605,Neonatal (qualifier value),C2939425,[tmco],neonatal,neonatal,adj,28,8
+97479605,Human Study Subject,C2349001,[popg],Subject,subjects,noun,1364,8
+97479605,Human Study Subject,C2349001,[popg],Subject,subjects,noun,674,8
+97479605,Human Study Subject,C2349001,[popg],Subject,subjects,noun,660,8
+97479605,Human Study Subject,C2349001,[popg],Subject,subjects,noun,419,8
+97479605,Investigative Subject,C2697811,[ftcn],Subject,subjects,noun,1364,8
+97479605,Investigative Subject,C2697811,[ftcn],Subject,subjects,noun,674,8
+97479605,Investigative Subject,C2697811,[ftcn],Subject,subjects,noun,660,8
+97479605,Investigative Subject,C2697811,[ftcn],Subject,subjects,noun,419,8
+97479605,Study Subject,C0681850,[grup],Subject,subjects,noun,1364,8
+97479605,Study Subject,C0681850,[grup],Subject,subjects,noun,674,8
+97479605,Study Subject,C0681850,[grup],Subject,subjects,noun,660,8
+97479605,Study Subject,C0681850,[grup],Subject,subjects,noun,419,8
+97479605,Subject - topic,C1706203,[idcn],Subject,subjects,noun,1364,8
+97479605,Subject - topic,C1706203,[idcn],Subject,subjects,noun,674,8
+97479605,Subject - topic,C1706203,[idcn],Subject,subjects,noun,660,8
+97479605,Subject - topic,C1706203,[idcn],Subject,subjects,noun,419,8
+97479605,Subject -direct target,C1550501,[ftcn],{Subject},subjects,noun,1364,8
+97479605,Subject -direct target,C1550501,[ftcn],{Subject},subjects,noun,674,8
+97479605,Subject -direct target,C1550501,[ftcn],{Subject},subjects,noun,660,8
+97479605,Subject -direct target,C1550501,[ftcn],{Subject},subjects,noun,419,8
+97479605,Evaluation procedure,C1261322,[hlca],Clinical Evaluations,clinical evaluations,noun,827,11
+97479605,Evaluation procedure,C1261322,[hlca],Clinical evaluation,clinical evaluation,noun,726,10
+97479605,P Blood group antibodies,C0369773,"[aapp,imft]",P NOS,p,adj,1287,1
+97479605,P Blood group antibodies,C0369773,"[aapp,imft]",P NOS,p,adj,1128,1
+97479605,P prime,C2603361,[clna],P',p,adj,1287,1
+97479605,P prime,C2603361,[clna],P',p,adj,1128,1
+97479605,Body tissue,C0040300,[tisu],Normal,normal,adj,877,6
+97479605,Cessation of life,C0011065,[orgf],Died,died,verb,687,4
+97479605,Death (finding),C1306577,[fndg],Died,died,verb,687,4
+97479605,Exist,C2987476,[qlco],Exist,exists,verb,254,6
+97479605,How Often Felt Normal question,C4553972,[inpr],Normal,normal,adj,877,6
+97479605,Intelligence Tests,C0021705,[diap],intelligence testing,intelligence testing,noun,786,20
+97479605,Mean Percent of Normal,C2347086,[qnco],% Normal,normal,adj,877,6
+97479605,Normal,C0205307,[qlco],NORMAL,normal,adj,877,6
+97479605,Normal Abdomen on Palpation,C5235018,[fndg],Normal,normal,adj,877,6
+97479605,Normal Abdomen on Visual Inspection,C5235189,[fndg],Normal,normal,adj,877,6
+97479605,Normal Appearance of Extremities,C5235194,[fndg],Normal,normal,adj,877,6
+97479605,Normal Capillary Refill Time,C0232357,[fndg],Normal,normal,adj,877,6
+97479605,Normal Chest Appearance,C5235193,[fndg],Normal,normal,adj,877,6
+97479605,Normal Gait,C5200925,[fndg],Normal,normal,adj,877,6
+97479605,Normal Immune Presence,C5202633,[fndg],Normal,normal,adj,877,6
+97479605,Normal Male External Genitalia,C5235195,[fndg],Normal,normal,adj,877,6
+97479605,Normal Point of Maximum Impulse,C5238822,[fndg],Normal,normal,adj,877,6
+97479605,Normal Precordial Palpation Finding,C5235188,[fndg],Normal,normal,adj,877,6
+97479605,Patient Outcome - Died,C1546956,[fndg],Died,died,verb,687,4
+97479605,Percent normal,C0439166,[qnco],normal %,normal,adj,877,6
+97479605,Sustain,C2732140,"[orch,phsu]",Sustain,sustain,verb,207,7
+97479605,Sustained,C0443318,[ftcn],sustain,sustain,verb,207,7
+97479605,controversy,C0680243,[socb],controversy,Controversy,noun,242,11
+97479605,reflecting,C0558058,[menp],reflect,reflect,verb,1430,7
+97479605,Clinical Evaluation,C4084924,[hlca],CLINICAL EVALUATION,clinical evaluation,noun,726,10
+97479605,Nervous System Physiological Phenomena,C0027767,[ortf],neurologic function,neurologic function,noun,319,8
+97479605,liothyronine,C0041014,"[aapp,horm,phsu]",T-3,t 3,noun,1118,1
+97479605,normal result,C0459422,[fndg],Normal Outcome,normal outcome,noun,1015,7
+97479605,Significantly high,C4055637,[qnco],Significantly high,significantly higher,adj,969,6
+97479605,Minangkabau Language,C0574377,[lang],MIN,min,noun,1109,3
+97479605,Mouse MIN NOS,C1524029,[neop],MIN NOS,min,noun,1109,3
+97479605,Per Minute,C0702093,[tmco],/min,min,noun,1109,3
+97479605,Percent per Minute,C3813700,[qnco],%/min,min,noun,1109,3
+97479605,Survivors,C0206194,[podg],Survivors,survivors,noun,706,9
+97479605,neurological status,C0746866,[fndg],neurologic status,neurologic status,noun,382,17
+97479605,year,C0439234,[tmco],YEARS,years,noun,631,5
+97479605,Spearman Correlation Test,C1710141,[inpr],Spearman Correlation,Spearman correlation,noun,1243,11
+97479605,Associated with,C0332281,[qlco],Associated with,associated with,verb,1314,15
+97479605,Follow-Up Information,C4745114,[inpr],Follow-Up Information,Follow-up information,noun,587,21
+97479605,blood flow measurement,C0005776,[diap],blood flow measurement,measurements CBF,noun,436,3
+97479605,Milliliter per gram,C1637390,[qnco],mL/g,mL g,noun,1096,1
+97479605,Rank,C0699794,[inpr],Rank,rank,noun,1252,4
+97479605,"TNFRSF11A protein, human",C0667477,"[aapp,bacs]",RANK,rank,noun,1252,4
+97479605,Levels (qualifier value),C0441889,[qlco],levels,levels,noun,181,6
+97479605,Performed,C0884358,[ftcn],PERFORMED,performed,verb,456,9
+97479605,Pet Animal,C0031268,[anim],Pet,PET,noun,471,3
+97479605,"Tomography, Emission-Computed",C0040398,[diap],PET,PET,noun,471,3
+97479605,neonatal period,C0935562,[tmco],neonatal period,neonatal period,noun,488,15
+97479605,"Hypoxic Ischemic Encephalopathy, Adverse Event",C4724158,[fndg],Hypoxic Ischemic Encephalopathy,hypoxic-ischemic encephalopathy,noun,554,31
+97479605,Hypoxic-Ischemic Encephalopathy,C0752304,[dsyn],Hypoxic Ischemic Encephalopathy,hypoxic-ischemic encephalopathy,noun,554,31
+97479605,Body Site Modifier - Lower,C1548802,[blor],Lower,lower,adj,1330,5
+97479605,Lower (action),C2003888,[acty],Lower,lower,adj,1330,5
+97479605,Lower - spatial qualifier,C0441994,[spco],LOWER,lower,adj,1330,5
+97479605,Viable,C0443348,[qlco],viability,viability,noun,221,9
+97479605,Limits of Stability Test,C5401439,[inpr],LOS,loss,noun,1446,4
+97479605,Loss,C1517945,[qnco],Loss,loss,noun,1446,4
+97479605,Obtain,C1301820,[ftcn],Obtained,obtained,verb,641,8
+97479605,part of,C1292711,[spco],part of,part of,noun,529,7
+97479605,Effect,C1280500,[qlco],Effects,effects,noun,281,7
+97479605,Correlation,C1707520,[qlco],Correlation,correlation,noun,1169,11
+97479605,Expression Negative,C5237010,[lbtr],Negative,negative,noun,1160,8
+97479605,Negative,C0205160,[fndg],Negative,negative,noun,1160,8
+97479605,Negative - answer,C3853545,[qlco],Negative,negative,noun,1160,8
+97479605,Negative Charge,C2825491,[qlco],Negative,negative,noun,1160,8
+97479605,Negative Finding,C1513916,[fndg],NEGATIVE,negative,noun,1160,8
+97479605,Negative Number,C2825415,[qnco],Negative,negative,noun,1160,8
+97479605,Mechanism (attribute),C0441712,[ftcn],mechanisms,mechanisms,noun,1520,10
+97479605,Study,C2603343,[resa],Study,study,noun,539,5
+97479605,Ten,C0205456,[qnco],Ten,Ten,noun,670,3
+97479605,Toxic Epidermal Necrolysis,C0014518,[dsyn],TEN,Ten,noun,670,3
+97479605,pentaerythritol tetranitrate,C0030858,"[orch,phsu]",TEN,Ten,noun,670,3
+97479605,Following,C0332282,[tmco],Subsequent,subsequent,adj,308,10
+97479605,Abnormal,C0205161,[fndg],ABNORMAL,abnormal,adj,818,8
+97479605,Abnormal Laboratory Test Result,C0438215,[lbtr],"Abnormal, NOS",abnormal,adj,818,8
+97479605,Abnormal Reference Range,C2699333,[inpr],ABNORMAL,abnormal,adj,818,8
+97479605,Current (present time),C0521116,[tmco],CURRENT,current,adj,364,7
+97479605,Electrical Current,C1705970,[npop],Current,current,adj,364,7
+97479605,Percent of Abnormal Cells,C2347472,[qnco],% Abnormal,abnormal,adj,818,8
+97479605,Severe brain damage,C3279537,[fndg],Severe brain damage,severe brain damage,noun,1543,19
+97479605,Cerebrovascular Trauma,C0751814,[inpo],Vascular Brain damage,vascular brain damage,noun,1500,12
+97479605,Adult,C0001675,[aggp],Adults,adults,noun,234,6
+97479605,Brain,C0006104,[bpoc],BRAIN,brain,noun,215,5
+97479605,Cerebrovascular,C1880018,[qlco],Cerebrovascular,cerebrovascular,adj,1454,15
+97479605,Greater,C1704243,[qnco],Greater,greater,adj,1438,7
+97479605,Homeostasis,C0019868,[biof],Autoregulation,autoregulation,noun,1470,14
+97479605,Age,C0001779,[orga],AGE,ages,noun,612,4
+97479605,"Glycation End Products, Advanced",C0162574,"[bacs,orch]",AGEs,ages,noun,612,4
+97479605,abnormal result,C0459424,[fndg],Abnormal Outcome,abnormal outcome,noun,927,7
+97479605,IPSS Risk Category Low,C4522223,[inpr],Low,low,adj,297,3
+97479605,IPSS-R Risk Category Low,C5203106,[fndg],Low,low,adj,297,3
+97479605,Low Level,C4321351,[fndg],Low,low,adj,297,3
+97479605,Low Mitosis-Karyorrhexis Index,C3890211,[qnco],Low,low,adj,297,3
+97479605,low,C0205251,[qlco],Low,low,adj,297,3
+97479605,low confidentiality,C1550472,[inpr],low,low,adj,297,3
+97479605,low exposure,C4048187,[qlco],low,low,adj,297,3
+97479605,Event Seriousness - Significant,C1546944,[qlco],Significant,significant,adj,1148,11
+97479605,Significant,C0750502,[idcn],Significant,significant,adj,1148,11
+97479605,Statistical Significance,C0237881,[qnco],significant,significant,adj,1148,11
+97479605,Adverse Event Associated with Vascular,C1558950,[fndg],VASCULAR,vascular,adj,1500,8
+97479605,Blood Vessel,C0005847,[bpoc],vascular,vascular,adj,1500,8
+97479605,Borg Category-Ratio 10 Perceived Exertion Score 5,C4050466,[fndg],Severe,severe,adj,1543,6
+97479605,Epidermal cGVHD Score 4,C4761449,[fndg],Severe,severe,adj,1543,6
+97479605,Intensity and Distress 5,C5203119,[fndg],Severe,severe,adj,1543,6
+97479605,Regulator,C1704735,[cnce],Regulatory,regulatory,adj,1509,10
+97479605,Severe (severity modifier),C0205082,[fndg],SEVERE,severe,adj,1543,6
+97479605,Severe Extremity Pain,C4050465,[fndg],Severe,severe,adj,1543,6
+97479605,Severe Hallucination,C4722466,[fndg],Severe,severe,adj,1543,6
+97479605,Vascular,C1801960,[qlco],Vascular,vascular,adj,1500,8
+97479605,regulatory,C0220905,[rnlw],regulatory,regulatory,adj,1509,10
+97479605,Population Mean,C2347634,[qnco],Mean,mean,noun,889,4
+97479605,Sample Mean,C2348143,[qnco],Mean,mean,noun,889,4
+97479605,Statistical mean,C0444504,[qnco],Mean,mean,noun,889,4
+98018928,"Myocytes, Cardiac",C0225828,[cell],Cardiomyocytes,Cardiomyocytes,noun,438,14
+98018928,"Myocytes, Cardiac",C0225828,[cell],Cardiomyocytes,cardiomyocytes,noun,91,14
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,Bupivacaine,noun,1420,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,bupivacaine,noun,1250,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,bupivacaine,noun,1161,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,Bupivacaine,noun,714,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,bupivacaine,noun,686,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,bupivacaine,noun,390,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,bupivacaine,noun,157,11
+98018928,bupivacaine,C0006400,"[orch,phsu]",BUPIVACAINE,Bupivacaine,noun,21,11
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,1394,10
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,1191,10
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,1016,10
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,839,10
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,402,10
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,282,10
+98018928,Inhibition,C3463820,[acty],Inhibition,inhibition,noun,33,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,1394,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,1191,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,1016,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,839,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,402,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,282,10
+98018928,Percent inhibition,C1628982,[qnco],% INHIBITION,inhibition,noun,33,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,1394,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,1191,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,1016,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,839,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,402,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,282,10
+98018928,Psychological inhibition,C0021467,[menp],INHIBITION,inhibition,noun,33,10
+98018928,Hamsters,C0018557,[mamm],HAMSTER,hamster,noun,493,7
+98018928,Hamsters,C0018557,[mamm],HAMSTER,hamster,noun,109,7
+98018928,Heart Ventricle,C0018827,[bpoc],Ventricles,ventricles,noun,501,10
+98018928,Heart Ventricle,C0018827,[bpoc],ventricular,ventricular,adj,73,11
+98018928,*Type - Kind of quantity,C1547052,[qnco],*Type,type,noun,1283,4
+98018928,*Type - Kind of quantity,C1547052,[qnco],*Type,type,noun,306,4
+98018928,*Type - Kind of quantity,C1547052,[qnco],*Type,type,noun,49,4
+98018928,GDC Type Terminology,C5202910,[inpr],TYPE,type,noun,1283,4
+98018928,GDC Type Terminology,C5202910,[inpr],TYPE,type,noun,306,4
+98018928,GDC Type Terminology,C5202910,[inpr],TYPE,type,noun,49,4
+98018928,Type - attribute,C0332307,[qlco],Type,type,noun,1283,4
+98018928,Type - attribute,C0332307,[qlco],Type,type,noun,306,4
+98018928,Type - attribute,C0332307,[qlco],Type,type,noun,49,4
+98018928,Ventricular,C1522565,[spco],Ventricular,ventricular,adj,73,11
+98018928,Present,C0150312,[fndg],Presence,presence,noun,628,8
+98018928,CALCIUM SUPPLEMENTS,C3540037,"[phsu,vita]",CALCIUM,calcium,noun,54,7
+98018928,Calcium Drug Class,C3714611,[phsu],CALCIUM,calcium,noun,54,7
+98018928,Calcium [EPC],C2936886,[phsu],Calcium,calcium,noun,54,7
+98018928,"Calcium, Dietary",C0006726,[inch],Calcium,calcium,noun,54,7
+98018928,calcium,C0006675,"[bacs,elii,phsu]",CALCIUM,calcium,noun,54,7
+98018928,Current (present time),C0521116,[tmco],CURRENT,current,noun,316,7
+98018928,Current (present time),C0521116,[tmco],CURRENT,current,noun,62,7
+98018928,Electrical Current,C1705970,[npop],Current,current,noun,316,7
+98018928,Electrical Current,C1705970,[npop],Current,current,noun,62,7
+98018928,Antibody to islet cells of pancreas measurement,C0201519,[lbpr],ICA,ICa,noun,1211,3
+98018928,Antibody to islet cells of pancreas measurement,C0201519,[lbpr],ICA,ICa,noun,1094,3
+98018928,Antibody to islet cells of pancreas measurement,C0201519,[lbpr],ICA,ICa,noun,828,3
+98018928,Antibody to islet cells of pancreas measurement,C0201519,[lbpr],ICA,ICa,noun,555,3
+98018928,Antibody to islet cells of pancreas measurement,C0201519,[lbpr],ICA,ICa,noun,422,3
+98018928,Antibody to islet cells of pancreas measurement,C0201519,[lbpr],ICA,ICa,noun,325,3
+98018928,Immunochromatography,C3178849,[lbpr],ICA,ICa,noun,1211,3
+98018928,Immunochromatography,C3178849,[lbpr],ICA,ICa,noun,1094,3
+98018928,Immunochromatography,C3178849,[lbpr],ICA,ICa,noun,828,3
+98018928,Immunochromatography,C3178849,[lbpr],ICA,ICa,noun,555,3
+98018928,Immunochromatography,C3178849,[lbpr],ICA,ICa,noun,422,3
+98018928,Immunochromatography,C3178849,[lbpr],ICA,ICa,noun,325,3
+98018928,Voltage,C0598352,[qnco],Voltage,voltage,adj,1043,7
+98018928,Voltage,C0598352,[qnco],Voltage,voltage,noun,952,7
+98018928,Voltage,C0598352,[qnco],Voltage,voltage,noun,521,7
+98018928,Channel,C0439799,[spco],Channel,channel,noun,1469,7
+98018928,Channel,C0439799,[spco],Channel,channel,noun,1553,7
+98018928,Channel,C0439799,[spco],Channel,channels,verb,1291,8
+98018928,Channel Object,C1706095,[cnce],Channel,channel,noun,1469,7
+98018928,Channel Object,C1706095,[cnce],Channel,channel,noun,1553,7
+98018928,Channel Object,C1706095,[cnce],Channel,channels,verb,1291,8
+98018928,Cardiotoxicity,C0876994,[inpo],Cardiotoxicity,cardiotoxicity,noun,244,14
+98018928,Cardiotoxicity,C0876994,[inpo],Cardiotoxicity,cardiotoxic,adj,172,11
+98018928,Experimental Result,C2825142,[fndg],Result,result,verb,1238,6
+98018928,Experimental Result,C2825142,[fndg],Result,RESULTS,noun,699,7
+98018928,Result,C1274040,[ftcn],Result,result,verb,1238,6
+98018928,Result,C1274040,[ftcn],Result,RESULTS,noun,699,7
+98018928,What subject filter - Result,C1546471,[idcn],Result,result,verb,1238,6
+98018928,What subject filter - Result,C1546471,[idcn],Result,RESULTS,noun,699,7
+98018928,inactivation,C0544461,[ftcn],Inactivation,inactivation,noun,924,12
+98018928,inactivation,C0544461,[ftcn],Inactivation,inactivation,noun,992,12
+98018928,Conditional,C1701901,[qlco],Dependent,dependent,adj,1051,9
+98018928,Conditional,C1701901,[qlco],Dependent,dependent,adj,746,9
+98018928,Dependent - ability,C0851827,[qlco],Dependent,dependent,adj,1051,9
+98018928,Dependent - ability,C0851827,[qlco],Dependent,dependent,adj,746,9
+98018928,Dependent for Toilet Use,C4321395,[inpr],dependent,dependent,adj,1051,9
+98018928,Dependent for Toilet Use,C4321395,[inpr],dependent,dependent,adj,746,9
+98018928,Dependent for bathing,C0429986,[fndg],dependent,dependent,adj,1051,9
+98018928,Dependent for bathing,C0429986,[fndg],dependent,dependent,adj,746,9
+98018928,Dependent for dressing,C0429964,[fndg],dependent,dependent,adj,1051,9
+98018928,Dependent for dressing,C0429964,[fndg],dependent,dependent,adj,746,9
+98018928,dependent,C3244310,[ftcn],dependent,dependent,adj,1051,9
+98018928,dependent,C3244310,[ftcn],dependent,dependent,adj,746,9
+98018928,Mechanism (attribute),C0441712,[ftcn],mechanisms,mechanisms,noun,1380,10
+98018928,Mechanism (attribute),C0441712,[ftcn],Mechanism,mechanism,noun,377,9
+98018928,Amplitude,C2346753,[spco],Amplitude,amplitude,noun,1081,9
+98018928,Amplitude,C2346753,[spco],Amplitude,amplitude,noun,815,9
+98018928,Time,C0040223,[tmco],Time,time,noun,896,4
+98018928,Time,C0040223,[tmco],Time,time,noun,534,4
+98018928,Mental concentration,C0086045,[menp],concentration,concentration,adj,732,13
+98018928,Mental concentration,C0086045,[menp],concentrations,concentrations,noun,668,14
+98018928,Peak level,C0444505,[qlco],Peak,peak,adj,1076,4
+98018928,Peak level,C0444505,[qlco],Peak,peak,adj,810,4
+98018928,Affect (mental function),C0001721,[menp],Affect,affect,verb,1492,6
+98018928,Appearance,C0700364,[qlco],APPEAR,appears,verb,1217,7
+98018928,Background,C1706907,[cnce],Background,BACKGROUND,noun,124,10
+98018928,Conclusion,C1707478,[idcn],Conclusions,CONCLUSIONS,noun,1174,11
+98018928,Methods,C0025663,[inpr],Methods,METHODS,noun,429,7
+98018928,Methods aspects,C0025664,[ftcn],METHODS,METHODS,noun,429,7
+98018928,Modulated,C0443264,[spco],modulate,modulates,verb,1540,9
+98018928,Part,C0449719,[spco],Part,part,noun,1229,4
+98018928,Part Dosing Unit,C1709471,[qnco],Part,part,noun,1229,4
+98018928,Study,C2603343,[resa],Study,study,noun,344,5
+98018928,Techniques,C0449851,[ftcn],Methods,METHODS,noun,429,7
+98018928,Work,C0043227,[ocac],Work,work,noun,1408,4
+98018928,inhibited,C0311403,[qlco],inhibited,inhibited,verb,796,9
+98018928,suggestion,C1705535,[idcn],Suggest,suggest,verb,1350,7
+98018928,CDISC SEND Study Design Terminology,C2983265,[inpr],DESIGN,designed,verb,354,8
+98018928,Design,C1707689,[acty],Design,designed,verb,354,8
+98018928,Record - QueryRequestLimit,C3853788,[qnco],record,recorded,verb,572,8
+98018928,Records,C0034869,[inpr],Record,recorded,verb,572,8
+98018928,Show,C1547282,[anim],Show,shown,verb,1031,5
+98018928,Usage,C0457083,[ftcn],Use,using,verb,581,5
+98018928,utilization qualifier,C0042153,[ftcn],use,using,verb,581,5
+98018928,Component (part),C1705248,[cnce],Component,component,noun,1525,9
+98018928,Component object,C0449432,[mnob],component,component,noun,1525,9
+98018928,Function (attribute),C0542341,[ftcn],Function,function,noun,1567,8
+98018928,Mathematical Operator,C1705273,[inpr],Function,function,noun,1567,8
+98018928,physiological aspects,C0031843,[phsf],function,function,noun,1567,8
+98018928,Data,C1511726,[idcn],Data,Data,noun,1326,4
+98018928,Data (eukaryote),C3714741,[euka],Data,Data,noun,1326,4
+98018928,Data call receiving device,C3245479,[medd],data,Data,noun,1326,4
+98018928,Patch-Clamp Techniques,C0242625,[resa],Patch Clamp Method,patch clamp method,noun,602,18
+98018928,Affinity,C1510827,[npop],Affinity,affinity,adj,1450,8
+98018928,Binding (Molecular Function),C1167622,[moft],bind,bind,verb,1436,4
+98018928,Binding action,C1145667,[acty],Bind,bind,verb,1436,4
+98018928,Blood Circulation,C0005775,[phsf],Circulation,circulation,noun,226,11
+98018928,Cerebral Ventricles,C0007799,[bsoj],Ventricles,ventricles,noun,501,10
+98018928,Characterization,C1880022,[acty],Characterized,characterized,verb,860,13
+98018928,Circulatory Process,C1516559,[orgf],Circulation,circulation,noun,226,11
+98018928,Dispersion,C0332624,[spco],dispersed,dispersed,verb,472,9
+98018928,IPSS Risk Category Low,C4522223,[inpr],Low,low,adj,1446,3
+98018928,IPSS-R Risk Category Low,C5203106,[fndg],Low,low,adj,1446,3
+98018928,Increase,C0442805,[ftcn],Increase,increase,noun,880,8
+98018928,Low Level,C4321351,[fndg],Low,low,adj,1446,3
+98018928,Low Mitosis-Karyorrhexis Index,C3890211,[qnco],Low,low,adj,1446,3
+98018928,low,C0205251,[qlco],Low,low,adj,1446,3
+98018928,low confidentiality,C1550472,[inpr],low,low,adj,1446,3
+98018928,low exposure,C4048187,[qlco],low,low,adj,1446,3
+98018928,FDA Inactivation,C5206843,[gora],Inactivated,inactivated,adj,1307,11
+98018928,Geographic state,C1301808,[geoa],State,state,noun,1319,5
+98018928,State,C1442792,[ftcn],State,state,noun,1319,5
+98018928,US State,C3148680,[geoa],State,state,noun,1319,5
+98018928,Absent,C0332197,[ftcn],absence,absence,noun,647,7
+98018928,Control function,C2587213,[ftcn],Control,control,noun,1125,7
+98018928,Levels (qualifier value),C0441889,[qlco],levels,levels,noun,1139,6
+98018928,Scientific Control,C1882979,[cnce],Control,control,noun,1125,7
+98018928,Study Control,C4553389,[cnce],control,control,noun,1125,7
+98018928,True Control Status,C3274648,[qlco],Control,control,noun,1125,7
+98018928,control aspects,C0243148,[qlco],control,control,noun,1125,7
+98018928,control substance,C1550141,[sbst],Control,control,noun,1125,7
+98018928,predisposed,C0231203,[ftcn],predisposing,predisposing,adj,1262,12
+98018928,Mechanism Component of Device,C1706376,[mnob],Mechanism,mechanism,noun,377,9
+98018928,Physical Shift,C2347509,[phpr],Shift,shift,noun,960,5
+98018928,shift displacement,C0333051,[ftcn],shift,shift,noun,960,5
+98018928,Inject - dosing instruction imperative,C1720154,[ftcn],Inject,injected,verb,208,8
+98018928,Local Anesthetic [EPC],C3536836,[phsu],Local Anesthetic,local anesthetic,noun,140,16
+98018928,Local Anesthetics,C0002934,"[orch,phsu]",local anaesthetic,local anesthetic,noun,140,16
+98018928,Local anesthesia,C0002921,[topp],local anesthetic,local anesthetic,noun,140,16
+98018928,Event Qualification - Dependency,C1546937,[idcn],Dependency,dependencies,noun,539,12
+98018928,emotional dependency,C0011546,[inbe],Dependency,dependencies,noun,539,12
+98018928,Certain (qualifier value),C0205423,[qlco],Certain,Certain,adj,513,7
+98018928,Definitely Related to Intervention,C1704787,[qlco],Certain,Certain,adj,513,7
+98018928,Able to Concentrate Question,C3827302,[inpr],Concentration,concentration,adj,732,13
+98018928,Attention,C0004268,[menp],Concentration,concentration,adj,732,13
+98018928,Concentration measurement,C1446561,[qnco],Concentration,concentration,adj,732,13
+98018928,Metabolic,C0311400,[ftcn],METABOLIC,metabolic,adj,1515,9
+98018928,"Metabolic Process, Cellular",C1524026,[celf],Metabolic,metabolic,adj,1515,9
+98018928,Metabolic:-:Point in time:^Patient:-,C2707259,[clna],Metabolic,metabolic,adj,1515,9
+98018928,Unidentified - modifier,C0205427,[qlco],Unidentified,unidentified,adj,1502,12
+98018928,Tracer Clearance,C2986829,[ftcn],Washout,washout,noun,1336,7
+98018928,Washout Period,C1710661,[tmco],WASHOUT,washout,noun,1336,7
+98018928,Washout phase,C4554474,[diap],Washout,washout,noun,1336,7
+98018928,Two,C0205448,[qnco],Two,two,adj,1376,3
+98018928,Cells,C0007634,[cell],the cell,the cell,adj,587,4
+98018928,Recovery - action,C0237820,[acty],Recovery,recovery,noun,904,8
+98018928,Recovery - healing process,C2004454,[orgf],RECOVERY,recovery,noun,904,8
+98018928,Steady-State,C0678587,[npop],Steady-State,steady-state,noun,973,12
+98018928,recovery - adjustment,C1555688,[qnco],recovery,recovery,noun,904,8
+98018928,Different,C1705242,[qlco],Different,different,adj,658,9
+98018928,Irrigation,C0022100,[topp],Wash,wash,noun,1151,4
+98018928,Wash (cleansing action),C0441648,[acty],Wash,wash,noun,1151,4
+98018928,Cardiac - anatomy qualifier,C1522601,[qlco],Cardiac,cardiac,adj,296,7
+98018928,Heart,C0018787,[bpoc],Cardiac,cardiac,adj,296,7
+98018928,calcium ion,C0596235,"[elii,phsu]",Ca2+,Ca2,noun,311,3
+98018928,Entire,C0439751,[qnco],Whole,whole,adj,591,5
+98018928,Providing presence (regime/therapy),C0392148,[topp],presence,presence,noun,628,8
+98018928,Curved,C0205134,[spco],Curve,curve,noun,1005,5
+98018928,Expression Negative,C5237010,[lbtr],Negative,negative,noun,943,8
+98018928,Negative,C0205160,[fndg],Negative,negative,noun,943,8
+98018928,Negative - answer,C3853545,[qlco],Negative,negative,noun,943,8
+98018928,Negative Charge,C2825491,[qlco],Negative,negative,noun,943,8
+98018928,Negative Finding,C1513916,[fndg],NEGATIVE,negative,noun,943,8
+98018928,Negative Number,C2825415,[qnco],Negative,negative,noun,943,8
+97443327,Hydrogen measurement,C0523702,[lbpr],HYDROGEN,hydrogen,noun,46,8
+97443327,"Hydrogen, Homeopathic preparation",C0885426,[inch],hydrogen,hydrogen,noun,46,8
+97443327,hydrogen,C0020275,[elii],HYDROGEN,hydrogen,noun,46,8
+97443327,formate biosynthetic process,C1157689,[moft],formate formation,Formation formate,noun,21,7
+97443327,Flux,C2348693,[npop],Flux,flux,noun,60,4
+97443327,Equivalent Weight,C0439185,[qnco],Equivalents,equivalents,noun,1421,11
+97443327,Equivalent Weight,C0439185,[qnco],Equivalents,equivalents,noun,77,11
+97443327,Reduced,C0392756,[qlco],Reducing,reducing,adj,1412,8
+97443327,Reduced,C0392756,[qlco],Reduction,reduction,noun,1019,9
+97443327,Reduced,C0392756,[qlco],Reducing,reducing,adj,68,8
+97443327,Carbon,C0007009,"[elii,phsu]",Carbon,carbon,noun,1538,6
+97443327,Carbon,C0007009,"[elii,phsu]",Carbon,carbon,noun,99,6
+97443327,FD 1,C0060122,"[nnon,phsu]",FD 1,FD-1,noun,369,4
+97443327,FD 1,C0060122,"[nnon,phsu]",FD 1,FD-1,noun,135,4
+97443327,Ruminococcus flavefaciens,C0318075,[bact],Ruminococcus flavefaciens,Ruminococcus flavefaciens,noun,337,12
+97443327,Ruminococcus flavefaciens,C0318075,[bact],Ruminococcus flavefaciens,Ruminococcus flavefaciens,noun,109,25
+97443327,Formates,C0016572,[orch],formate,formate,noun,1465,7
+97443327,Formates,C0016572,[orch],formate,formate,noun,1327,7
+97443327,Formates,C0016572,[orch],formate,formate,noun,912,7
+97443327,Formates,C0016572,[orch],formate,formate,noun,985,7
+97443327,Formates,C0016572,[orch],formate,formate,noun,281,7
+97443327,formate,C0220832,"[irda,orch]",Formate,formate,noun,1465,7
+97443327,formate,C0220832,"[irda,orch]",Formate,formate,noun,1327,7
+97443327,formate,C0220832,"[irda,orch]",Formate,formate,noun,912,7
+97443327,formate,C0220832,"[irda,orch]",Formate,formate,noun,985,7
+97443327,formate,C0220832,"[irda,orch]",Formate,formate,noun,281,7
+97443327,HIV: PrEP and PEP,C5400798,[topp],PEP,PEP,noun,1087,3
+97443327,HIV: PrEP and PEP,C5400798,[topp],PEP,PEP,noun,528,3
+97443327,HIV: PrEP and PEP,C5400798,[topp],PEP,PEP,noun,682,3
+97443327,HIV: PrEP and PEP,C5400798,[topp],PEP,PEP,noun,229,3
+97443327,"PTPN22 protein, human",C1335057,"[aapp,enzy]",PEP,PEP,noun,1087,3
+97443327,"PTPN22 protein, human",C1335057,"[aapp,enzy]",PEP,PEP,noun,528,3
+97443327,"PTPN22 protein, human",C1335057,"[aapp,enzy]",PEP,PEP,noun,682,3
+97443327,"PTPN22 protein, human",C1335057,"[aapp,enzy]",PEP,PEP,noun,229,3
+97443327,FGFR1 gene,C0919509,[gngm],H2,H2,noun,1476,2
+97443327,FGFR1 gene,C0919509,[gngm],H2,H2,noun,1382,2
+97443327,FGFR1 gene,C0919509,[gngm],H2,H2,noun,848,2
+97443327,FGFR1 gene,C0919509,[gngm],H2,H2,noun,294,2
+97443327,H2 genotype,C4554401,[fndg],H2,H2,noun,1476,2
+97443327,H2 genotype,C4554401,[fndg],H2,H2,noun,1382,2
+97443327,H2 genotype,C4554401,[fndg],H2,H2,noun,848,2
+97443327,H2 genotype,C4554401,[fndg],H2,H2,noun,294,2
+97443327,RLN2 gene,C1419394,[gngm],H2,H2,noun,1476,2
+97443327,RLN2 gene,C1419394,[gngm],H2,H2,noun,1382,2
+97443327,RLN2 gene,C1419394,[gngm],H2,H2,noun,848,2
+97443327,RLN2 gene,C1419394,[gngm],H2,H2,noun,294,2
+97443327,Succinates,C0038617,[orch],succinate,succinate,noun,1112,9
+97443327,Succinates,C0038617,[orch],succinate,succinate,noun,667,9
+97443327,Succinates,C0038617,[orch],succinate,succinate,noun,264,9
+97443327,succinate,C0220918,"[orch,phsu]",Succinate,succinate,noun,1112,9
+97443327,succinate,C0220918,"[orch,phsu]",Succinate,succinate,noun,667,9
+97443327,succinate,C0220918,"[orch,phsu]",Succinate,succinate,noun,264,9
+97443327,H NOS Antibodies,C0369286,"[aapp,imft]",H NOS,h,noun,1281,1
+97443327,H NOS Antibodies,C0369286,"[aapp,imft]",H NOS,h,noun,1298,1
+97443327,H NOS Antibodies,C0369286,"[aapp,imft]",H NOS,h,noun,844,1
+97443327,Hour Times Percent,C4528284,[qnco],h*%,h,noun,1281,1
+97443327,Hour Times Percent,C4528284,[qnco],h*%,h,noun,1298,1
+97443327,Hour Times Percent,C4528284,[qnco],h*%,h,noun,844,1
+97443327,Per Hour,C0564385,[tmco],/h,h,noun,1281,1
+97443327,Per Hour,C0564385,[tmco],/h,h,noun,1298,1
+97443327,Per Hour,C0564385,[tmco],/h,h,noun,844,1
+97443327,acetate,C0000975,"[orch,phsu]",ACETATE,acetate,noun,1100,7
+97443327,acetate,C0000975,"[orch,phsu]",ACETATE,acetate,noun,549,7
+97443327,C2 wt Allele,C4284286,[gngm],CO2,CO2,noun,1015,3
+97443327,C2 wt Allele,C4284286,[gngm],CO2,CO2,noun,567,3
+97443327,Formed,C0205431,[ftcn],Formed,formed,verb,861,6
+97443327,Formed,C0205431,[ftcn],Formed,formed,verb,786,6
+97443327,Physical Shift,C2347509,[phpr],Shift,shift,noun,1391,5
+97443327,Physical Shift,C2347509,[phpr],Shift,shift,noun,1314,5
+97443327,cobaltous cation,C2347816,"[elii,phsu]",Co2+,CO2,noun,1015,3
+97443327,cobaltous cation,C2347816,"[elii,phsu]",Co2+,CO2,noun,567,3
+97443327,shift displacement,C0333051,[ftcn],shift,shift,noun,1391,5
+97443327,shift displacement,C0333051,[ftcn],shift,shift,noun,1314,5
+97443327,production,C0033268,[ocac],Production,production,noun,1479,10
+97443327,production,C0033268,[ocac],Production,production,noun,1335,10
+97443327,growth rate,C0449249,[tmco],growth rate,growth rate,noun,1258,11
+97443327,growth rate,C0449249,[tmco],normal growth rates,growth rates normal,noun,1187,6
+97443327,Chemical Cleavage,C0596311,[phpr],Cleavage,cleavage,noun,900,8
+97443327,Chemical Cleavage,C0596311,[phpr],Cleavage,cleavage,noun,1039,8
+97443327,Cytokinesis,C0010813,[celf],cleavage,cleavage,noun,900,8
+97443327,Cytokinesis,C0010813,[celf],cleavage,cleavage,noun,1039,8
+97443327,Cytokinesis of the fertilized ovum,C1330957,[celf],cleavage,cleavage,noun,900,8
+97443327,Cytokinesis of the fertilized ovum,C1330957,[celf],cleavage,cleavage,noun,1039,8
+97443327,Affecting,C0392760,[ftcn],Affecting,affecting,noun,1498,9
+97443327,Affecting,C0392760,[ftcn],Affected,affected,verb,1145,8
+97443327,Acetate Kinase,C0000977,"[aapp,enzy]",Acetate Kinase,acetate kinase,noun,621,6
+97443327,Batch Cell Culture Techniques,C3179108,[lbpr],"Culture, Batch",batch culture,noun,819,13
+97443327,Carbon-13 Magnetic Resonance Spectroscopy,C3850003,[diap],13C NMR,13C-NMR,noun,931,7
+97443327,FH gene,C1366530,[gngm],FUMARASE,fumarase,noun,729,8
+97443327,Form:Finding:Point in time:{Setting}:Document:{Role},C4255237,[clna],Form,form,verb,662,4
+97443327,Formation,C1522492,[ftcn],Form,form,verb,662,4
+97443327,Fumarate Hydratase,C0016799,"[aapp,enzy]",Fumarase,fumarase,noun,729,8
+97443327,"Fumarate Hydratase, Mitochondrial, human",C1850941,"[aapp,enzy]",Fumarase,fumarase,noun,729,8
+97443327,Increasing (qualifier value),C0442808,[ftcn],increasing,increasing,verb,1247,10
+97443327,Lactates,C0022924,[orch],lactate,Lactate,noun,764,7
+97443327,Malate Dehydrogenase,C0024544,"[aapp,enzy]",Malate Dehydrogenase,malate dehydrogenase,noun,707,20
+97443327,Manufactured form,C0376315,[mnob],Form,form,verb,662,4
+97443327,NADP-Dependent Malic Enzyme,C4283949,"[aapp,enzy]",Malate Dehydrogenase,malate dehydrogenase,noun,707,20
+97443327,Pyruvate Kinase,C0034348,"[aapp,enzy]",Pyruvate Kinase,pyruvate kinase,noun,576,15
+97443327,Qualitative form,C0348078,[qlco],form,form,verb,662,4
+97443327,Succinate Dehydrogenase,C0038615,"[aapp,enzy]","Reductase, Fumarate",fumarate reductase,noun,743,18
+97443327,carboxylate,C0178528,[orch],carboxylated,carboxylated,verb,646,12
+97443327,lactate,C0376261,"[orch,phsu]",LACTATE,Lactate,noun,764,7
+97443327,pyruvate dehydrogenase,C0034343,"[aapp,enzy]",Pyruvate dehydrogenase,pyruvate dehydrogenase,noun,593,22
+97443327,suggestion,C1705535,[idcn],Suggest,suggested,verb,1397,9
+97443327,Biochemical Pathway,C1704259,[moft],Pathways,pathways,noun,1122,8
+97443327,Pathway (interactions),C1705987,[cnce],Pathways,pathways,noun,1122,8
+97443327,acetate biosynthetic process,C1157696,[moft],acetate formation,formation acetate,noun,242,7
+97443327,Anthropological Culture,C0010453,[idcn],Culture,culture,noun,519,7
+97443327,Cultural aspects,C0220814,[ftcn],culture,culture,noun,519,7
+97443327,Data,C1511726,[idcn],Data,data,noun,965,4
+97443327,Data (eukaryote),C3714741,[euka],Data,data,noun,965,4
+97443327,Data call receiving device,C3245479,[medd],data,data,noun,965,4
+97443327,Laboratory culture,C0430400,[lbpr],Culture,culture,noun,519,7
+97443327,Microbial culture (procedure),C2242979,[lbpr],Culture,culture,noun,519,7
+97443327,Balanced - adjective,C0205415,[ftcn],balanced,balanced,verb,1448,8
+97443327,cellulose,C0007648,"[bacs,orch]",CELLULOSE,cellulose,noun,469,9
+97443327,Cell Extracts,C0007592,[celc],Cell Extracts,extracts cells,noun,442,5
+97443327,Distributing,C0520511,[idcn],Distribution,distribution,noun,1071,12
+97443327,Distribution,C1704711,[ftcn],Distribution,distribution,noun,1071,12
+97443327,Growth,C0018270,[orgf],GROWTH,growth,noun,811,6
+97443327,Growth action,C2911660,[phpr],Growth,growth,noun,811,6
+97443327,Hydrogenase,C0020284,"[aapp,enzy]",Hydrogenase,hydrogenase,noun,873,11
+97443327,Rapid,C0456962,[qlco],Rapid,rapid,adj,805,5
+97443327,Reduction (chemical),C0301630,[npop],Reduction,reduction,noun,1019,9
+97443327,Reduction procedure,C1293152,[topp],Reduction,reduction,noun,1019,9
+97443327,Surgical reduction,C4551656,[topp],reduction,reduction,noun,1019,9
+97443327,Tissue Growth,C1621966,[ortf],Growth,growth,noun,811,6
+97443327,growth aspects,C0220844,[phsf],growth,growth,noun,811,6
+97443327,Metabolic Pathway,C1291081,[ftcn],Metabolic Pathway,pathway metabolic,noun,149,9
+97443327,Changed status,C0443172,[qnco],changing,changing,noun,1157,8
+97443327,Changing,C0392747,[ftcn],Changing,changing,noun,1157,8
+97443327,Detected (finding),C0442726,[fndg],Detected,detected,verb,430,8
+97443327,Detection,C1511790,[topp],Detected,detected,verb,430,8
+97443327,Infusion pump Alert priority PH,C4049686,[fndg],PH,pH,noun,1180,2
+97443327,"Pancreatic Hormone, human",C4318402,[aapp],PH,pH,noun,1180,2
+97443327,Philadelphia Chromosome Negative,C3888511,[lbtr],Ph-,pH,noun,1180,2
+97443327,Philadelphia chromosome positive,C0856536,[lbtr],Ph+,pH,noun,1180,2
+97443327,extracellular,C0521119,[celc],extracellular,extracellular,noun,1166,13
+97443327,pH:LsCnc:Pt:Ser/Plas:Qn,C0364896,[clna],pH,pH,noun,1180,2
+97443327,ph+,C0450407,[fndg],ph+,pH,noun,1180,2
+97443327,ph++,C0450408,[fndg],ph++,pH,noun,1180,2
+97443327,ph+++,C0450409,[fndg],ph+++,pH,noun,1180,2
+97443327,bacterium H2,C1490571,[bact],bacterium H2,H2 bacterium,noun,294,9
+97443327,Pyruvates,C0034354,[orch],pyruvate,pyruvate,noun,1051,8
+97443327,expense,C0680864,[qnco],expense,expense,noun,1371,7
+97443327,pyruvate,C0244104,"[bacs,orch]",Pyruvate,pyruvate,noun,1051,8
+97443327,enzyme activity,C0243102,[moft],enzyme activity,enzyme activities,noun,406,17
+97443327,Experimental Result,C2825142,[fndg],Result,resulted,verb,1300,8
+97443327,Result,C1274040,[ftcn],Result,resulted,verb,1300,8
+97443327,What subject filter - Result,C1546471,[idcn],Result,resulted,verb,1300,8
+97443327,Construct,C2827421,[idcn],Construct,constructed,verb,378,11
+97443327,Cellobiose,C0007630,[orch],Cellobiose,cellobiose,noun,489,10
+97443327,Chief Complaint Continuously Present,C5238666,[fndg],Continuous,continuous,adj,508,10
+97443327,Continuous,C0549178,[idcn],CONTINUOUS,continuous,adj,508,10
+97443327,Continuous murmur,C0232266,[fndg],Continuous,continuous,adj,508,10
+97443327,Exchange (clinical),C4019011,[clna],Exchange,exchange,noun,947,8
+97443327,Limited (extensiveness),C0439801,[ftcn],Limited,limited,adj,500,7
+97443327,Limited Lifting Ability,C4050251,[inpr],Limited,limited,adj,500,7
+97443327,Limited Walking Ability,C2674459,[fndg],Limited,limited,adj,500,7
+97443327,Reaction,C0443286,[ftcn],Reaction,reaction,noun,956,8
+97443327,degree of relationship - exchange,C0678640,[socb],exchange,exchange,noun,947,8
+97443327,"Bacteria, Anaerobic",C0004613,[bact],anaerobic bacterium,anaerobic bacterium,noun,304,9
+97443327,Range,C1514721,[qnco],Range,range,noun,1231,5
+97443327,Sample Range,C2348147,[qnco],Range,range,noun,1231,5
+97443327,Antimicrobial Intermediate Susceptibility Result,C2827755,[lbtr],INTERMEDIATE,intermediate,adj,189,12
+97443327,Contain (action),C2700400,[acty],Containing,containing,adj,1545,10
+97443327,Containing (qualifier),C0332256,[ftcn],containing,containing,adj,1545,10
+97443327,Conversion Mutation,C5237007,[comd],Conversion,conversion,noun,161,10
+97443327,Conversions (qualifier value),C0439836,[ftcn],Conversion,conversion,noun,161,10
+97443327,Fermentation,C0015852,[moft],Fermentation,fermentation,noun,1556,12
+97443327,IPSS-R Risk Category Intermediate,C5202835,[fndg],Intermediate,intermediate,adj,189,12
+97443327,Intermediate,C0205103,[spco],INTERMEDIATE,intermediate,adj,189,12
+97443327,Intermediate Mitosis-Karyorrhexis Index,C3889971,[qnco],Intermediate,intermediate,adj,189,12
+97443327,International Metastatic Renal Cell Carcinoma Database Consortium (IMDC) Criteria - Intermediate-Risk Group,C4722218,[inpr],Intermediate,intermediate,adj,189,12
+97443327,Major,C0205164,[qlco],Major,major,adj,1532,5
+97443327,Major <insect>,C4318856,[euka],Major,major,adj,1532,5
+97443327,Observation Interpretation - intermediate,C1550465,[lbtr],Intermediate,intermediate,adj,189,12
+97443327,Phosphoenolpyruvate,C0031642,"[bacs,orch]",Phosphoenolpyruvate,phosphoenolpyruvate,noun,208,19
+97443327,Anaerobic,C3641081,[qlco],Anaerobic,anaerobic,adj,304,9
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1701,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1389,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1524,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1552,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1273,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1044,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,1238,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,Confidence intervals,noun,975,9
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,CI,noun,734,2
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,confidence intervals,noun,163,9
+97408530,Confidence Intervals,C0009667,[qnco],Confidence Intervals,confidence intervals,noun,33,20
+97408530,Approximate,C0332232,[qlco],Approximated,approximated,verb,808,12
+97408530,Approximate,C0332232,[qlco],Approximate,Approximate,adj,21,11
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,1660,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,1499,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,1142,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,945,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,781,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,859,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,verb,781,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,verb,859,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,678,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,verb,117,9
+97408530,Estimated,C0750572,[qnco],estimates,estimates,noun,91,9
+97408530,Methods,C0025663,[inpr],Method,Method,noun,1648,6
+97408530,Methods,C0025663,[inpr],Method,Method,noun,108,6
+97408530,Methods,C0025663,[inpr],Method,method,noun,76,6
+97408530,Techniques,C0449851,[ftcn],Method,Method,noun,1648,6
+97408530,Techniques,C0449851,[ftcn],Method,Method,noun,108,6
+97408530,Techniques,C0449851,[ftcn],Method,method,noun,76,6
+97408530,Test Method,C0871511,[lbpr],METHOD,Method,noun,1648,6
+97408530,Test Method,C0871511,[lbpr],METHOD,Method,noun,108,6
+97408530,Test Method,C0871511,[lbpr],METHOD,method,noun,76,6
+97408530,Hereditary,C0439660,[ftcn],Heritable,heritability,noun,130,12
+97408530,Hereditary,C0439660,[ftcn],Heritable,heritability,noun,58,12
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,1657,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,1412,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,1456,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,1133,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,778,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,856,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,675,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,385,2
+97408530,FGFR1 gene,C0919509,[gngm],H2,h2,noun,144,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,1657,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,1412,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,1456,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,1133,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,778,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,856,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,675,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,385,2
+97408530,H2 genotype,C4554401,[fndg],H2,h2,noun,144,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,1657,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,1412,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,1456,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,1133,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,778,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,856,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,675,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,385,2
+97408530,RLN2 gene,C1419394,[gngm],H2,h2,noun,144,2
+97408530,used by,C1273517,[fndg],used,used,verb,1677,4
+97408530,used by,C1273517,[fndg],used,used,verb,1509,4
+97408530,used by,C1273517,[fndg],used,used,verb,901,4
+97408530,used by,C1273517,[fndg],used,used,verb,699,4
+97408530,Data Set,C0150098,[inpr],Dataset,data set,noun,965,8
+97408530,Data Set,C0150098,[inpr],data sets,data sets,noun,798,9
+97408530,Data Set,C0150098,[inpr],Dataset,data set,noun,746,8
+97408530,Data Set,C0150098,[inpr],Dataset,data set,noun,579,8
+97408530,Data Set,C0150098,[inpr],data sets,data sets,noun,333,9
+97408530,Obtain,C1301820,[ftcn],Obtain,obtain,verb,1685,6
+97408530,Obtain,C1301820,[ftcn],Obtain,obtain,verb,1517,6
+97408530,Obtain,C1301820,[ftcn],Obtain,obtain,verb,707,6
+97408530,Obtain,C1301820,[ftcn],Obtained,obtained,verb,200,8
+97408530,Acquisition (action),C1706701,[acty],Obtain,obtain,verb,1685,6
+97408530,Acquisition (action),C1706701,[acty],Obtain,obtain,verb,1517,6
+97408530,Acquisition (action),C1706701,[acty],Obtain,obtain,verb,707,6
+97408530,metaplastic cell transformation,C1510411,[patf],Transformation,transformation,noun,1354,14
+97408530,metaplastic cell transformation,C1510411,[patf],Transformed,transformed,adj,1023,11
+97408530,metaplastic cell transformation,C1510411,[patf],Transformed,transformed,adj,1121,11
+97408530,metaplastic cell transformation,C1510411,[patf],Transformed,transformed,verb,1023,11
+97408530,metaplastic cell transformation,C1510411,[patf],Transformed,transformed,verb,1121,11
+97408530,metaplastic cell transformation,C1510411,[patf],Transformation,transformation,noun,882,14
+97408530,genetic pedigree,C0030761,[inpr],Pedigree,pedigree,noun,1469,8
+97408530,genetic pedigree,C0030761,[inpr],Pedigree,pedigree,noun,441,8
+97408530,genetic pedigree,C0030761,[inpr],Pedigree,pedigree,noun,474,8
+97408530,genetic pedigree,C0030761,[inpr],Pedigree,pedigree,noun,548,8
+97408530,N not otherwise specified Antibody,C0369718,"[aapp,imft]",N NOS,N,noun,1252,1
+97408530,N not otherwise specified Antibody,C0369718,"[aapp,imft]",N NOS,N,noun,494,1
+97408530,N not otherwise specified Antibody,C0369718,"[aapp,imft]",N NOS,N,noun,589,1
+97408530,Silo (dataset),C1706233,[inpr],Dataset,data set,noun,965,8
+97408530,Silo (dataset),C1706233,[inpr],Dataset,data set,noun,746,8
+97408530,Silo (dataset),C1706233,[inpr],Dataset,data set,noun,579,8
+97408530,Structure,C0678594,[spco],Structure,structure,noun,450,9
+97408530,Structure,C0678594,[spco],Structure,structure,noun,483,9
+97408530,Structure,C0678594,[spco],Structure,structure,noun,557,9
+97408530,Data Transformation,C1705163,[resa],Transformation,transformation,noun,1354,14
+97408530,Data Transformation,C1705163,[resa],Transformation,transformation,noun,882,14
+97408530,EDQM-HC Transformation Terminology,C4724208,[inpr],Transformation,transformation,noun,1354,14
+97408530,EDQM-HC Transformation Terminology,C4724208,[inpr],Transformation,transformation,noun,882,14
+97408530,cell transformation,C0040682,[celf],transformation,transformation,noun,1354,14
+97408530,cell transformation,C0040682,[celf],transformation,transformation,noun,882,14
+97408530,T prime,C2603360,[clna],T',T,adj,1057,1
+97408530,T prime,C2603360,[clna],T',T,adj,1171,1
+97408530,T prime,C2603360,[clna],T',T,noun,1057,1
+97408530,T prime,C2603360,[clna],T',T,noun,1171,1
+97408530,Numerical value,C1522609,[qnco],Value,value,noun,1415,5
+97408530,Numerical value,C1522609,[qnco],Value,value,noun,1188,5
+97408530,Type - attribute,C0332307,[qlco],types,types,noun,1460,5
+97408530,Type - attribute,C0332307,[qlco],types,types,noun,432,5
+97408530,Sample Variance,C2348152,[qnco],Sample Variance,sampling variance,noun,825,17
+97408530,Sample Variance,C2348152,[qnco],Variance,variance,noun,760,8
+97408530,Simulate composite resin,C0284447,[bodm],simulated,simulated,verb,348,9
+97408530,Simulate composite resin,C0284447,[bodm],simulated,simulated,adj,214,9
+97408530,Levels (qualifier value),C0441889,[qlco],levels,levels,noun,1446,6
+97408530,Levels (qualifier value),C0441889,[qlco],levels,levels,noun,375,6
+97408530,Simulations,C0679083,[resa],Simulations,simulations,noun,522,11
+97408530,Simulations,C0679083,[resa],Simulations,simulations,noun,632,11
+97408530,Intellectual scale,C0349674,[inpr],Scale,scale,noun,1325,5
+97408530,Intellectual scale,C0349674,[inpr],Scale,scale,noun,1035,5
+97408530,Scaling,C1947916,[acty],Scale,scale,noun,1325,5
+97408530,Scaling,C1947916,[acty],Scale,scale,noun,1035,5
+97408530,Weight measurement scales,C0175659,[medd],Scale,scale,noun,1325,5
+97408530,Weight measurement scales,C0175659,[medd],Scale,scale,noun,1035,5
+97408530,Binding (Molecular Function),C1167622,[moft],Bound,bounds,verb,1282,6
+97408530,Binding action,C1145667,[acty],Bound,bounds,verb,1282,6
+97408530,Bound (value),C2349209,[cnce],Bound,bounds,verb,1282,6
+97408530,Bounded by,C0332297,[spco],bounds,bounds,verb,1282,6
+97408530,Contain (action),C2700400,[acty],Containing,containing,verb,1392,10
+97408530,Containing (qualifier),C0332256,[ftcn],containing,containing,verb,1392,10
+97408530,Normalize,C1882115,[resa],Normalize,normalize,verb,909,9
+97408530,Population Mean,C2347634,[qnco],Mean,mean,noun,1100,4
+97408530,Sample Mean,C2348143,[qnco],Mean,mean,noun,1100,4
+97408530,Statistical mean,C0444504,[qnco],Mean,mean,noun,1100,4
+97408530,Upper,C1282910,[spco],UPPER,Upper,adj,1257,5
+97408530,Experimental Result,C2825142,[fndg],Result,results,noun,1619,7
+97408530,Result,C1274040,[ftcn],Result,results,noun,1619,7
+97408530,Reverse,C1555029,[ftcn],Reverse,reversing,noun,1334,9
+97408530,Usage,C0457083,[ftcn],Use,using,verb,229,5
+97408530,What subject filter - Result,C1546471,[idcn],Result,results,noun,1619,7
+97408530,suggestion,C1705535,[idcn],Suggest,suggested,verb,1627,9
+97408530,utilization qualifier,C0042153,[ftcn],use,using,verb,229,5
+97408530,Animal Disease Models,C0012644,[emod],animal model,animal model,noun,278,12
+97408530,Animal Model,C0599779,[anim],Animal Model,animal model,noun,278,12
+97408530,Effect,C1280500,[qlco],Effects,effects,noun,264,7
+97408530,First (number),C0205435,[qnco],first,first,noun,650,5
+97408530,Firstly,C1279901,[qlco],First,first,noun,650,5
+97408530,Trait,C0599883,[orga],Trait,trait,noun,250,5
+97408530,Count of entities,C0449788,[qnco],number,number,noun,1483,6
+97408530,Numbers,C0237753,[qnco],*Number,number,noun,1483,6
+97408530,*Constant,C1547014,[qnco],*Constant,constant,adj,609,8
+97408530,Constant (qualifier),C1948059,[qlco],Constant,constant,adj,609,8
+97408530,Data,C1511726,[idcn],Data,data,noun,224,4
+97408530,Data (eukaryote),C3714741,[euka],Data,data,noun,224,4
+97408530,Data call receiving device,C3245479,[medd],data,data,noun,224,4
+97408530,Distributing,C0520511,[idcn],Distribution,distribution,noun,929,12
+97408530,Distribution,C1704711,[ftcn],Distribution,distribution,noun,929,12
+97408530,Global Stable Disease,C5203100,[fndg],SD,SD,noun,1109,2
+97408530,Global Stable Disease in Blood,C5203099,[fndg],SD,SD,noun,1109,2
+97408530,Global Stable Disease in Lymph Nodes,C5203098,[fndg],SD,SD,noun,1109,2
+97408530,Global Stable Disease in Skin,C5203101,[fndg],SD,SD,noun,1109,2
+97408530,Global Stable Disease in Viscera,C5203103,[fndg],SD,SD,noun,1109,2
+97408530,RANGAP1 gene,C1335589,[gngm],SD,SD,noun,1109,2
+97408530,RECIL SD,C5203102,[fndg],SD,SD,noun,1109,2
+97408530,"SD, Rat Strain",C2699239,[mamm],SD,SD,noun,1109,2
+97408530,Variance,C1711260,[qlco],Variance,variance,noun,760,8
+97408530,Back,C0004600,[blor],Back,back,adj,1304,4
+97408530,"Back structure, including back of neck",C0460009,[blor],Back,back,adj,1304,4
+97408530,Computation (action),C1880157,[acty],Computed,computed,verb,1007,8
+97408530,Computed (procedure),C1441526,[lbpr],Computed,computed,verb,1007,8
+97408530,Dorsal,C0205095,[spco],BACK,back,adj,1304,4
+97408530,Heart Sound Auscultation at Back,C5238720,[fndg],Back,back,adj,1304,4
+97408530,chest pain radiating to back,C2318663,[sosy],Back,back,adj,1304,4
+97408530,Pool (action),C2349200,[ftcn],Pooled,pooled,verb,1428,6
+97408530,Pooled Blood Products,C4522255,[phsu],Pooled,pooled,verb,1428,6
+97408530,Pooled Sample,C1709595,[bdsu],Pooled,pooled,verb,1428,6
+97408530,Critical,C1511545,[qlco],Critical,critical,noun,1179,8
+97408530,Amount type - Percentage,C1549488,[idcn],Percentage,percentages,noun,1374,11
+97408530,Money or percentage indicator - Percentage,C1561533,[idcn],Percentage,percentages,noun,1374,11
+97408530,Percent (qualifier value),C0439165,[qnco],Percentage,percentages,noun,1374,11
+97408530,Direct (qualifier),C1947931,[qlco],Direct,direct,adj,257,6
+97408530,Direct type of relationship,C0439851,[qlco],direct,direct,adj,257,6
+97408530,Singular,C0205171,[qnco],SINGLE,single,adj,237,6
+97408530,Unmarried,C0087136,[fndg],single,single,adj,237,6
+97408530,Unmarried person,C0037179,[popg],Single,single,adj,237,6
+97408530,Associated with,C0332281,[qlco],Associated,associated,adj,152,10
+97408530,Body Site Modifier - Lower,C1548802,[blor],Lower,lower,adj,1267,5
+97408530,Box,C0179400,[mnob],Box,Box,noun,874,3
+97408530,Box Dosing Unit,C1706087,[qnco],{Box},Box,noun,874,3
+97408530,Full,C0443225,[qlco],Full,full,adj,273,4
+97408530,Lower (action),C2003888,[acty],Lower,lower,adj,1267,5
+97408530,Lower - spatial qualifier,C0441994,[spco],LOWER,lower,adj,1267,5
+97408530,"PTGS1 protein, human",C1565830,"[aapp,enzy]",COX,Cox,noun,878,3
+97408530,Random,C0439605,[qlco],Random,random,adj,461,6
+97408530,Randomization,C0034656,[resa],RANDOM,random,adj,461,6
+97408530,Reliable,C3858758,[ftcn],Reliable,reliable,adj,1692,8
+97408530,True,C0205238,[qlco],TRUE,true,adj,1407,4
+97408530,ALPHA (substance),C5400714,"[orch,phsu]",ALPHA,alpha,noun,1232,5
+97408530,Alpha,C2003941,[inpr],Alpha,alpha,noun,1232,5
+97408530,Alpha Value,C2350010,[qlco],Alpha,alpha,noun,1232,5
+97408530,Greek letter alpha (qualifier value),C0439095,[inpr],Alpha,alpha,noun,1232,5
+97408530,t-Distribution,C1711141,[qnco],t-Distribution,T distribution,noun,1203,12
+97408530,Original,C0205313,[qlco],Original,original,adj,1316,8
+97408530,Original Regulatory Submission,C2347409,[ocac],Original,original,adj,1316,8
+97408530,Two,C0205448,[qnco],Two,two,adj,428,3
+97408530,Actual,C0237400,[qlco],Real,real,adj,574,4
+97408530,Real Data Type,C3272377,[inpr],REAL,real,adj,574,4
+97453431,Example,C1707959,[cnce],Example,example,noun,735,7
+97453431,Example,C1707959,[cnce],Example,example,noun,527,7
+97453431,Example,C1707959,[cnce],Example,example,noun,35,7
+97453431,dornase alfa,C1135662,"[aapp,enzy,phsu]",rhDNase,rhDNase,noun,21,7
+97453431,Event,C0441471,[evnt],Events,events,noun,766,6
+97453431,Event,C0441471,[evnt],Event,event,noun,56,5
+97453431,Episodic,C1455761,[tmco],Recurrent,recurrent,adj,171,9
+97453431,Episodic,C1455761,[tmco],Recurrent,recurrent,adj,46,9
+97453431,Recurrent,C2945760,[tmco],RECURRENT,recurrent,adj,171,9
+97453431,Recurrent,C2945760,[tmco],RECURRENT,recurrent,adj,46,9
+97453431,Recurrent tumor,C0521158,[neop],Recurrent,recurrent,adj,171,9
+97453431,Recurrent tumor,C0521158,[neop],Recurrent,recurrent,adj,46,9
+97453431,Analysis,C0936012,[resa],ANALYSIS,analysis,noun,62,8
+97453431,Protocol Event,C2698908,[evnt],event,event,noun,56,5
+97453431,analysis aspect,C1524024,[ftcn],analysis,analysis,noun,62,8
+97453431,Methods,C0025663,[inpr],Method,method,noun,503,6
+97453431,Methods,C0025663,[inpr],Methods,methods,noun,327,7
+97453431,Methods,C0025663,[inpr],Methods,methods,noun,107,7
+97453431,Techniques,C0449851,[ftcn],Method,method,noun,503,6
+97453431,Techniques,C0449851,[ftcn],Methods,methods,noun,327,7
+97453431,Techniques,C0449851,[ftcn],Methods,methods,noun,107,7
+97453431,Usage,C0457083,[ftcn],Use,using,verb,373,5
+97453431,Usage,C0457083,[ftcn],Use,using,verb,191,5
+97453431,utilization qualifier,C0042153,[ftcn],use,using,verb,373,5
+97453431,utilization qualifier,C0042153,[ftcn],use,using,verb,191,5
+97453431,Methods aspects,C0025664,[ftcn],METHODS,methods,noun,327,7
+97453431,Methods aspects,C0025664,[ftcn],METHODS,methods,noun,107,7
+97453431,Model,C3161035,[inpr],Models,models,noun,905,6
+97453431,Model,C3161035,[inpr],Models,models,noun,201,6
+97453431,Numerous,C0439064,[qnco],MULTIPLE,multiple,adj,757,8
+97453431,Numerous,C0439064,[qnco],MULTIPLE,multiple,adj,159,8
+97453431,First (number),C0205435,[qnco],first,first,noun,691,5
+97453431,First (number),C0205435,[qnco],first,first,adj,521,5
+97453431,Firstly,C1279901,[qlco],First,first,noun,691,5
+97453431,Firstly,C1279901,[qlco],First,first,adj,521,5
+97453431,At risk,C1444641,[qlco],At risk,at risk,adj,801,4
+97453431,Comparison,C1707455,[acty],Compare,compare,verb,315,7
+97453431,Gill structure,C0017558,[bpoc],Gill,Gill,noun,240,4
+97453431,Give - dosing instruction imperative,C1947971,[ftcn],Give,give,verb,841,4
+97453431,Lingala language,C0574448,[lang],LIN,Lin,noun,251,3
+97453431,Lobular Neoplasia,C0861352,[neop],LIN,Lin,noun,251,3
+97453431,Precision - second,C1561503,[idcn],second,second,noun,605,6
+97453431,Procedure Agents Domain,C3888235,[inpr],AG,AG,noun,889,2
+97453431,Recommendation,C0034866,[idcn],recommend,recommend,verb,869,9
+97453431,STRENGTH (attribute),C0808080,[idcn],strengths,strengths,noun,472,9
+97453431,Second Suffix,C1705190,[inpr],Second,second,noun,605,6
+97453431,Show,C1547282,[anim],Show,show,verb,340,4
+97453431,Simulate composite resin,C0284447,[bodm],simulated,simulated,verb,538,9
+97453431,Structure of angular gyrus,C0152305,[bpoc],AG,AG,noun,889,2
+97453431,consider,C0750591,[idcn],consider,consider,verb,81,8
+97453431,second (number),C0205436,[qnco],Second,second,noun,605,6
+97453431,seconds,C0457385,[tmco],SECOND,second,noun,605,6
+97453431,Count,C0750480,[qnco],Count,counting,verb,90,8
+97453431,Count Dosing Unit,C1705566,[qnco],COUNT,counting,verb,90,8
+97453431,Approach,C0449445,[spco],approaches,approaches,noun,830,10
+97453431,CDISC Events Class,C3541888,[clas],EVENTS,events,noun,766,6
+97453431,Data Set,C0150098,[inpr],data sets,data sets,noun,437,4
+97453431,Event Unit,C4724244,[qnco],EVENTS,events,noun,766,6
+97453431,Interval,C1272706,[tmco],intervals,intervals,noun,791,9
+97453431,Response (statement),C1706817,[inpr],Answer,answers,noun,857,7
+97453431,Result,C1274040,[ftcn],Outcome,outcomes,noun,181,8
+97453431,Computer software,C0037585,"[inpr,mnob]",Software,software,noun,399,8
+97453431,Programs,C3484370,[ftcn],Programs,programs,noun,408,8
+97453431,Programs - Publication Format,C0376691,[inpr],Programs,programs,noun,408,8
+97453431,IFNG gene,C1334085,[gngm],"INTERFERON, GAMMA",gamma interferon,noun,635,16
+97453431,gamma-interferon,C3539881,"[aapp,imft,phsu]","Interferon, Gamma",gamma interferon,noun,635,16
+97453431,interferon type II,C0021745,"[aapp,imft,phsu]",Gamma Interferon,gamma interferon,noun,635,16
+97453431,Effect,C1280500,[qlco],Effect,effect,noun,565,6
+97453431,"Effect, Appearance",C2348382,[qlco],Effect,effect,noun,565,6
+97453431,Outcome of Therapy,C1518681,[fndg],effect,effect,noun,565,6
+97453431,Base - General Qualifier,C1705938,[idcn],Based,based,verb,615,5
+97453431,Basis - conceptual entity,C1527178,[ftcn],Based,based,verb,615,5
+97453431,Clinical Trials,C0008976,[resa],Trial,trial,noun,626,5
+97453431,Discontinued,C1444662,[fndg],Discontinuous,discontinuous,adj,777,13
+97453431,Interrupted,C0443239,[qlco],Discontinuous,discontinuous,adj,777,13
+97453431,Interest,C0543488,[menp],interesting,interesting,adj,717,11
+97453431,Science of Statistics,C0038215,[ocdi],Statistical,statistical,adj,387,11
+97453431,Time-to-Event Dataset,C5237330,[inpr],TIME-TO-EVENT,time-to-event,noun,129,13
+97453431,Test Method,C0871511,[lbpr],METHOD,method,noun,503,6
+97453431,DataType,C1609081,[idcn],Data Type,type data,noun,937,4
+97453431,GDC Data Type Terminology,C5204149,[inpr],data_type,type data,noun,937,4
+97453431,HL7 data type,C3266822,[inpr],Data type,type data,noun,937,4
+97453431,Marginal Analysis,C3853051,[ocac],Marginal Analysis,marginal analysis,noun,896,8
+97453431,Occult,C0205262,[qlco],Hidden,hidden,adj,577,6
+97453431,Data,C1511726,[idcn],Data,data,noun,143,4
+97453431,Data (eukaryote),C3714741,[euka],Data,data,noun,143,4
+97453431,Data call receiving device,C3245479,[medd],data,data,noun,143,4
+97453431,"Human Cells, Tissues, and Cellular and Tissue-Based Products Processing",C4521541,[hlca],Process,process,noun,99,7
+97453431,Process,C1522240,[phpr],Process,process,noun,99,7
+97453431,bony process,C1184743,[bpoc],Process,process,noun,99,7
+97453431,popularity,C0679970,[socb],popularity,popular,adj,379,7
