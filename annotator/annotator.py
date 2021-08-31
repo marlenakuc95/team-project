@@ -62,6 +62,7 @@ IRRELEVANT_TRIGGER_COLUMNS = ['location', 'utterance', 'is_negated']
 session = requests.Session()
 
 # get ticket granting ticket
+print(f'Fetching ticket granting ticket from {TICKET_GRANTING_TICKET_URL}')
 ticket_granting_ticket = urllib.parse.urlparse(
     BeautifulSoup(
         session.post(
@@ -73,9 +74,11 @@ ticket_granting_ticket = urllib.parse.urlparse(
 ).path.split('/')[-1]
 
 # get service ticket
+service_ticket_url = f'{TICKET_URL}/{ticket_granting_ticket}'
+print(f'Fetching service ticket from {service_ticket_url}')
 service_ticket = BeautifulSoup(
     session.post(
-        url=f'{TICKET_URL}/{ticket_granting_ticket}',
+        url=service_ticket_url,
         data={'service': GENERIC_BATCH_SERVICE_URL}
     ).content,
     features='html5lib'
@@ -84,14 +87,17 @@ service_ticket = BeautifulSoup(
 # make actual api call
 input_text_path = DATA_DIR.joinpath(INPUT_FILE_NAME)
 service_url = f'{GENERIC_BATCH_SERVICE_URL}?ticket={service_ticket}'
+print(f'Submitting file {input_text_path} to {service_url}')
 session.post(
     url=service_url,
     files={"UpLoad_File": open(input_text_path, 'r'), },
     data=DATA,
     headers={'Connection': "close"},
-    allow_redirects=False, )
+    allow_redirects=False,
+)
 
 # call api twice because it only works this way (same in original java implementation)
+print(f'Calling {service_url} again to retrieve annotations')
 response = session.post(
     url=service_url,
     files={"UpLoad_File": open(input_text_path, 'r'), },
@@ -100,6 +106,7 @@ csv_text = re.sub(r'NOT DONE LOOP\n', '', response.text)
 
 # preprocess data
 
+print('Annotations retrieved, processing preprocessing annotations response.')
 annotation_df = pd.read_csv(StringIO(csv_text), sep='|', header=None, names=OUTPUT_COLUMNS).drop(
     columns=['dummy', 'score'])
 
@@ -133,4 +140,6 @@ annotation_df['start'] = annotation_df['positions'].str.extract(r'(\d+)/.*').ast
 annotation_df['length'] = annotation_df['positions'].str.extract(r'.*/(\d+)').astype(int)
 annotation_df = annotation_df.drop(columns='positions')
 
-annotation_df.to_csv(ANNOTATIONS_DIR.joinpath(f'annotations_{input_text_path.stem}.csv'), index=False)
+target_path = ANNOTATIONS_DIR.joinpath(f'annotations_{input_text_path.stem}.csv')
+print(f'Preprocessing finished, saving annotations to {target_path}')
+annotation_df.to_csv(target_path, index=False)
