@@ -1,3 +1,4 @@
+import argparse
 import re
 import urllib.parse
 from io import StringIO
@@ -8,19 +9,34 @@ from bs4 import BeautifulSoup
 
 from utils import DATA_DIR, ANNOTATIONS_DIR
 
-# before running, enter your credentials here:
-EMAIL_ADDRESS = ''
-API_KEY = ''
+parser = argparse.ArgumentParser()
+
+# required parameters
+parser.add_argument(
+    '--email',
+    default=None,
+    type=str,
+    required=True,
+    help='email address for login to UMLS Terminology Services'
+)
+parser.add_argument(
+    '--api_key',
+    default=None,
+    type=str,
+    required=True,
+    help='api key for authentication to MetaMap API'
+)
+args = parser.parse_args()
+INPUT_FILE_NAME = "pubmed21n0001.txt"
 
 # other settings
-INPUT_FILE_NAME = "pubmed21n0001.txt"
 DATA = {
     "SKR_API": True,
     # See Batch commands here: https://metamap.nlm.nih.gov/Docs/MM_2016_Usage.pdf
     "Batch_Command": "metamap -N -E -Z 2021AA -V Base",
     "Batch_Env": "",
     "RUN_PROG": "GENERIC_V",
-    "Email_Address": EMAIL_ADDRESS,
+    "Email_Address": args.email,
     "BatchNotes": "SKR Web API test",
     "SilentEmail": True,
 }
@@ -46,7 +62,7 @@ ticket_granting_ticket = urllib.parse.urlparse(
     BeautifulSoup(
         session.post(
             url=TICKET_GRANTING_TICKET_URL,
-            data={'apikey': API_KEY}
+            data={'apikey': args.api_key}
         ).content,
         features='html5lib'
     ).find('form').get('action')
