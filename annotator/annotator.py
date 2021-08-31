@@ -1,11 +1,15 @@
+import sys
 import argparse
 import re
 import urllib.parse
 from io import StringIO
+from pathlib import Path
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+
+sys.path.append(str(Path(__file__).parent.parent.absolute()))
 
 from utils import DATA_DIR, ANNOTATIONS_DIR
 
