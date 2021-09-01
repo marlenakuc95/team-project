@@ -65,7 +65,7 @@ while pubmed_pointers['annotator_status'].notnull().sum() < 50:
     input_file_idx = pubmed_pointers['annotator_status'].notnull().idxmin()
     pubmed_pointers.loc[input_file_idx, 'annotator_status'] = 'processing'
     pubmed_pointers.to_csv(pubmed_pointers_path)
-    input_file_name = f'{pubmed_pointers.loc[input_file_idx, "file_name"]}_parsed.txt'
+    input_file_name = pubmed_pointers.loc[input_file_idx, "file_name"]
     print(f'Blocked file {input_file_name} for annotating')
 
     # get ticket granting ticket
@@ -92,7 +92,7 @@ while pubmed_pointers['annotator_status'].notnull().sum() < 50:
     ).find('body').text
 
     # make actual api call
-    input_text_path = ANNOTATOR_INPUT_DIR.joinpath(input_file_name)
+    input_text_path = ANNOTATOR_INPUT_DIR.joinpath(f'{input_file_name}_parsed.txt')
     service_url = f'{GENERIC_BATCH_SERVICE_URL}?ticket={service_ticket}'
     print(f'Submitting file {input_text_path} to {service_url}')
     session.post(
