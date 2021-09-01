@@ -77,7 +77,7 @@ class AdapterErnie(pl.LightningModule):
         tokens, entity_embeddings, y = batch
         y_hat = self(tokens, entity_embeddings)
         # set all tokens without alignment to 0 to ignore them in computation of loss
-        mask = y == -1
+        mask = y != -1
         loss = self.loss(mask * y_hat, mask * y)
         return loss
 
