@@ -1,7 +1,11 @@
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.joinpath('data')
+
+PROJECT_DIR = Path(__file__).parent
+DATA_DIR = PROJECT_DIR.joinpath('data')
 ANNOTATIONS_DIR = DATA_DIR.joinpath('annotations')
+DATASETS_DIR = PROJECT_DIR.joinpath('datasets')
+ANNOTATOR_INPUT_DIR = DATASETS_DIR.joinpath('pubmed').joinpath('parsed_annotator')
 
 
 # noinspection PyPep8Naming
