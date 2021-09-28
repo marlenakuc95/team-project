@@ -7,10 +7,18 @@ https://www.aclweb.org/anthology/2020.coling-main.118.pdf
 ## Project structure
  .
     ├── datasets                # 
-    ├── annotator               # Documentation files (alternatively `doc`)
-    ├── adapter_ERNIE           # Source files (alternatively `lib` or `app`)
-    ├── k_bert                  # Automated tests (alternatively `spec` or `tests`)
-    └── README.md
+    ├── annotator               # 
+    ├── adapter_ERNIE           #
+    ├── k_bert                  #
+    └── README.md               #
   
 > Use short lowercase names at least for the top-level files and folders except
 > `LICENSE`, `README.md`
+.
+├── build                   # Compiled files (alternatively `dist`)
+├── docs                    # Documentation files (alternatively `doc`)
+├── src                     # Source files (alternatively `lib` or `app`)
+├── test                    # Automated tests (alternatively `spec` or `tests`)
+├── tools                   # Tools and utilities
+├── LICENSE
+└── README.md
