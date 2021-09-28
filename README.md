@@ -6,12 +6,10 @@ https://www.aclweb.org/anthology/2020.coling-main.118.pdf
 
 ## Project structure
 
-"""
+$ tree
  .
     ├── datasets                # 
     ├── annotator               # 
     ├── adapter_ERNIE           #
     ├── k_bert                  #
     └── README.md               #
-  
- """
