@@ -20,11 +20,10 @@ def custom_collate(batch):
         attention_mask = batch[0][1].unsqueeze(0)
         alignments = batch[0][2].unsqueeze(0)
         embeddings = batch[0][3].unsqueeze(0)
-        lengths = [alignments.size(0)]
 
     else:
-        input_ids, attention_mask, alignments, embeddings, lengths = zip(
-            *[(a, b, c, d, c.size(1)) for (a, b, c, d) in sorted(batch, key=lambda tup: tup[2].size(0), reverse=True)])
+        input_ids, attention_mask, alignments, embeddings = zip(
+            *[(a, b, c, d) for (a, b, c, d) in sorted(batch, key=lambda tup: tup[2].size(0), reverse=True)])
 
         # Padding with 0 or -1? I guess -1?
         max_len = alignments[0].size(0)
@@ -35,12 +34,12 @@ def custom_collate(batch):
 
         # Padding with 0?
         embeddings = [
-            torch.cat((em, torch.zeros(max_len - em.size(0), max_inp_len)), 0) if em.size(0) != max_len else em
+            torch.cat((em, torch.zeros(max_len - em.size(0), em.size(1))), 0) if em.size(0) != max_len else em
             for em in embeddings]
 
         alignments = torch.stack(alignments, 0)
         embeddings = torch.stack(embeddings, 0)
-        input_ids = torch.stack(input_ids, 0)
-        attention_mask = torch.stack(attention_mask, 0)
+        input_ids = torch.tensor(input_ids)
+        attention_mask = torch.tensor(attention_mask)
 
-    return input_ids, attention_mask, alignments, embeddings, lengths
+    return input_ids, attention_mask, alignments, embeddings

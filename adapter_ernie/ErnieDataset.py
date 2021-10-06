@@ -1,13 +1,18 @@
+import os
+from typing import Iterator
+
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, IterableDataset
 import pandas as pd
 import pathlib
+
+from torch.utils.data.dataset import T_co
 from transformers import BertTokenizerFast  # to be then deleted
 
 
 # TODO: Parametrize more (add input length, etc.)
 
-class ErnieDataset(Dataset):
+class ErnieDataset(IterableDataset):
 
     def __init__(self,
                  path_to_data: pathlib.Path,
@@ -22,9 +27,28 @@ class ErnieDataset(Dataset):
         self.input_texts = []
         self.annotations = []
         self.embedding_table = pd.read_csv(str(path_to_emb), header=None)
+        self.data_path = path_to_data
+        self.annotations_path = path_to_ann
 
-        for file_dir in path_to_data.iterdir():
+    def __len__(self):
+        return len(self.doc_ids)
+
+    def __iter__(self):
+        file_dir_names = os.listdir(self.data_path)
+        for file_dir_idx in range(torch.utils.data.get_worker_info().id, len(file_dir_names),
+                                  torch.utils.data.get_worker_info().num_workers):
+            file_dir = self.data_path.joinpath(file_dir_names[file_dir_idx])
             path_list = file_dir.glob('*.txt')
+
+            # Read annotations and CORRECT OFFSETS!
+            annotation_df = pd.read_csv(
+                str(self.annotations_path.joinpath("annotations_" + file_dir.stem + "_parsed").with_suffix(".csv")))
+
+            for index, rows in annotation_df.iterrows():
+                if rows['text'] == 'ABS':
+                    starts = int(rows['start'])
+                    starts = starts + 6
+            annotation_df["moved_start"] = annotation_df.apply(lambda x: x["start"] - starts, axis=1)
 
             for path in path_list:
                 # Read data
@@ -33,78 +57,60 @@ class ErnieDataset(Dataset):
 
                 with open(str(path), encoding="utf-8") as f:
                     input_text = f.read()
-                    self.input_texts.append(input_text)
 
-                # Read annotations and CORRECT OFFSETS!
-                df = pd.read_csv(
-                    str(path_to_ann.joinpath("annotations_" + file_dir.stem + "_parsed").with_suffix(".csv")))
+                """ TRANSFORMER INPUT"""
+                encoding = self.tokenizer(text=input_text, return_offsets_mapping=True, max_length=512,
+                                          padding='max_length')
+                offsets = encoding["offset_mapping"]
+                input_ids = encoding["input_ids"]  # 512 x 1
+                attention_mask = encoding['attention_mask']
 
-                for index, rows in df.iterrows():
-                    if rows['text'] == 'ABS':
-                        starts = int(rows['start'])
-                        starts = starts + 6
-                df["moved_start"] = df.apply(lambda x: x["start"] - starts, axis=1)
+                """ ALIGNMENT TENSOR"""
+                # TODO: Special tokens have offset = 0, implement to ignore
+                # Dimensions
+                # I - input tokens
+                # N_e - number of entities
+                # Output: N_e x I (Values: 1 - aligned, 0 - non-aligned, (-1) - irrelevant)
 
-                self.annotations.append(df[df['document'] == int(doc_id)])
+                entities = annotation_df[annotation_df['document'] == int(doc_id)]
+                entities_pt = torch.tensor(entities["moved_start"].values).unsqueeze(dim=1)
+                entities_pt = entities_pt.repeat(1, len(input_ids))
 
-    def __len__(self):
-        return len(self.doc_ids)
+                # Get tensor of tokens from input with their offsets
+                entities_size = entities_pt.size()[0]
+                offsets_pt = torch.tensor([x for (x, y) in offsets]).repeat(entities_size, 1)
 
-    def __getitem__(self, idx: int):
+                # Compare offsets for ALL entities, match = 1, no-match = 0 (get local alignment tensor)
+                loc_alignment_pt = torch.eq(entities_pt, offsets_pt).long()
 
-        """ TRANSFORMER INPUT"""
-        example = self.input_texts[idx]
-        encoding = self.tokenizer(text=example, return_offsets_mapping=True, max_length=512, padding='max_length')
-        offsets = encoding["offset_mapping"]
-        input_ids = encoding["input_ids"]  # 512 x 1
-        attention_mask = encoding['attention_mask']
+                # Get max of columns to get global alignment tensor
+                glob_align_pt = torch.max(loc_alignment_pt, 0)[0].repeat(entities_size, 1)
 
-        """ ALIGNMENT TENSOR"""
-        # TODO: Special tokens have offset = 0, implement to ignore
-        # Dimensions
-        # I - input tokens
-        # N_e - number of entities
-        # Output: N_e x I (Values: 1 - aligned, 0 - non-aligned, (-1) - irrelevant)
+                # Turn all zeros to -1
+                loc_alignment_pt = torch.where(loc_alignment_pt == 0, -1, loc_alignment_pt)
 
-        entities = self.annotations[idx]
-        entities_pt = torch.tensor(entities["moved_start"].values).unsqueeze(dim=1)
-        entities_pt = entities_pt.repeat(1, len(input_ids))
+                # Compare local alignment with global alignment. If local == -1 and glob == 1, set local alignment to 0.
+                alignments = torch.where((loc_alignment_pt == -1) & (glob_align_pt == 1), 0, loc_alignment_pt)
 
-        # Get tensor of tokens from input with their offsets
-        entities_size = entities_pt.size()[0]
-        offsets_pt = torch.tensor([x for (x, y) in offsets]).repeat(entities_size, 1)
+                """ ENTITIES EMBEDDINGS"""
+                embedd_subset = self.embedding_table.iloc[:, 0].isin(entities["CUI"].tolist())
+                embedd_subset = self.embedding_table[embedd_subset]
+                embeddings = []
 
-        # Compare offsets for ALL entities, match = 1, no-match = 0 (get local alignment tensor)
-        loc_alignment_pt = torch.eq(entities_pt, offsets_pt).long()
+                for cui in entities["CUI"].tolist():
+                    # If cui is found, convert df row to tensor
+                    try:
+                        em = embedd_subset.loc[cui]
+                        embeddings.append(em.values)
 
-        # Get max of columns to get global alignment tensor
-        glob_align_pt = torch.max(loc_alignment_pt, 0)[0].repeat(entities_size, 1)
+                    # If cui is not found, append tensor with zeroes
+                    except KeyError:
+                        embeddings.append([0] * 50)
 
-        # Turn all zeros to -1
-        loc_alignment_pt = torch.where(loc_alignment_pt == 0, -1, loc_alignment_pt)
+                # Convert to tensor
+                embeddings = torch.tensor(embeddings)
 
-        # Compare local alignment with global alignment. If local == -1 and glob == 1, set local alignment to 0.
-        alignments = torch.where((loc_alignment_pt == -1) & (glob_align_pt == 1), 0, loc_alignment_pt)
-
-        """ ENTITIES EMBEDDINGS"""
-        embedd_subset = self.embedding_table.iloc[:, 0].isin(entities["CUI"].tolist())
-        embedd_subset = self.embedding_table[embedd_subset]
-        embeddings = []
-
-        for cui in entities["CUI"].tolist():
-            # If cui is found, convert df row to tensor
-            try:
-                em = embedd_subset.loc[cui]
-                embeddings.append(em.values)
-
-            # If cui is not found, append tensor with zeroes
-            except KeyError:
-                embeddings.append([0] * 50)
-
-        # Convert to tensor
-        embeddings = torch.tensor(embeddings)
-
-        return input_ids, attention_mask, alignments, embeddings
+                yield input_ids, attention_mask, alignments, embeddings
 
 
 # Calling the class
