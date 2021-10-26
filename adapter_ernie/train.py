@@ -20,7 +20,7 @@ from utils import DATA_DIR
 
 logging.basicConfig(
     format='%(levelname)s %(asctime)s %(pathname)s: %(message)s',
-    level=logging.INFO,
+    # level=logging.INFO,
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
@@ -31,8 +31,8 @@ config = {
     'adapter_type': 'pfeiffer',
     'adapter_non_linearity': 'relu',
     'adapter_reduction_factor': 16,
-    'batch_size_train': 2,
-    'num_workers': 1,#os.cpu_count(),
+    'batch_size_train': 64,
+    'num_workers': os.cpu_count(),
     'optimizer': torch.optim.AdamW,
     'lr': 1e-2,
     'weight_decay': 1e-3,

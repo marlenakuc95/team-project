@@ -40,8 +40,6 @@ def custom_collate(batch):
 
         alignments = torch.stack(alignments, 0)
         embeddings = torch.stack(embeddings, 0)
-        if not (embeddings != 0).any():
-            print('')
         input_ids = torch.tensor(input_ids)
 
     logging.info('Loading collated batch')
