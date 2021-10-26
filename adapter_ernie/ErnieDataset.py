@@ -1,13 +1,10 @@
+import logging
 import os
-from typing import Iterator
-
-import torch
-from torch.utils.data import Dataset, IterableDataset
-import pandas as pd
 import pathlib
 
-from torch.utils.data.dataset import T_co
-from transformers import BertTokenizerFast  # to be then deleted
+import pandas as pd
+import torch
+from torch.utils.data import IterableDataset
 
 
 # TODO: Parametrize more (add input length, etc.)
@@ -26,32 +23,27 @@ class ErnieDataset(IterableDataset):
         self.doc_ids = []
         self.input_texts = []
         self.annotations = []
+        self.annotation_df = None
         self.embedding_table = pd.read_csv(str(path_to_emb), header=None)
         self.data_path = path_to_data
         self.annotations_path = path_to_ann
-
-    def __len__(self):
-        return len(self.doc_ids)
+        self.file_dir_names = os.listdir(self.data_path)
 
     def __iter__(self):
-        file_dir_names = os.listdir(self.data_path)
-        for file_dir_idx in range(torch.utils.data.get_worker_info().id, len(file_dir_names),
+        for file_dir_idx in range(torch.utils.data.get_worker_info().id, len(self.file_dir_names),
                                   torch.utils.data.get_worker_info().num_workers):
-            file_dir = self.data_path.joinpath(file_dir_names[file_dir_idx])
-            path_list = file_dir.glob('*.txt')
+            file_dir = self.data_path.joinpath(self.file_dir_names[file_dir_idx])
 
+            annotations_file_path = str(
+                self.annotations_path.joinpath("annotations_" + file_dir.stem + "_parsed").with_suffix(".csv"))
+            logging.info(f'Loading annotations file {annotations_file_path}')
             # Read annotations and CORRECT OFFSETS!
-            annotation_df = pd.read_csv(
-                str(self.annotations_path.joinpath("annotations_" + file_dir.stem + "_parsed").with_suffix(".csv")))
+            self.annotation_df = pd.read_csv(annotations_file_path)
 
-            for index, rows in annotation_df.iterrows():
-                if rows['text'] == 'ABS':
-                    starts = int(rows['start'])
-                    starts = starts + 6
-            annotation_df["moved_start"] = annotation_df.apply(lambda x: x["start"] - starts, axis=1)
-
+            path_list = file_dir.glob('*.txt')
             for path in path_list:
                 # Read data
+                logging.info(f'Loading text file {path}')
                 doc_id = path.stem.split('_parsed')[0]
                 self.doc_ids.append(doc_id)
 
@@ -59,11 +51,11 @@ class ErnieDataset(IterableDataset):
                     input_text = f.read()
 
                 """ TRANSFORMER INPUT"""
+                logging.info('Tokenizing text')
                 encoding = self.tokenizer(text=input_text, return_offsets_mapping=True, max_length=512,
                                           padding='max_length')
                 offsets = encoding["offset_mapping"]
                 input_ids = encoding["input_ids"]  # 512 x 1
-                attention_mask = encoding['attention_mask']
 
                 """ ALIGNMENT TENSOR"""
                 # TODO: Special tokens have offset = 0, implement to ignore
@@ -72,7 +64,8 @@ class ErnieDataset(IterableDataset):
                 # N_e - number of entities
                 # Output: N_e x I (Values: 1 - aligned, 0 - non-aligned, (-1) - irrelevant)
 
-                entities = annotation_df[annotation_df['document'] == int(doc_id)]
+                logging.info('Computing alignment tensor')
+                entities = self.annotation_df[self.annotation_df['document'] == int(doc_id)]
                 entities_pt = torch.tensor(entities["moved_start"].values).unsqueeze(dim=1)
                 entities_pt = entities_pt.repeat(1, len(input_ids))
 
@@ -93,6 +86,7 @@ class ErnieDataset(IterableDataset):
                 alignments = torch.where((loc_alignment_pt == -1) & (glob_align_pt == 1), 0, loc_alignment_pt)
 
                 """ ENTITIES EMBEDDINGS"""
+                logging.info('Computing embedding tensor')
                 embedd_subset = self.embedding_table.iloc[:, 0].isin(entities["CUI"].tolist())
                 embedd_subset = self.embedding_table[embedd_subset]
                 embeddings = []
@@ -110,14 +104,5 @@ class ErnieDataset(IterableDataset):
                 # Convert to tensor
                 embeddings = torch.tensor(embeddings)
 
-                yield input_ids, attention_mask, alignments, embeddings
-
-
-# Calling the class
-ROOT = pathlib.Path(__file__).absolute().parent.parent.joinpath('datasets', 'pubmed')
-PUBMED_TR = ROOT.joinpath('parsed_tr')
-ANN_PATH = ROOT.joinpath('annotations')
-EMB_PATH = ROOT.parent.joinpath('embedds', 'GAN_embeddings.csv')
-TOK = BertTokenizerFast.from_pretrained("bert-base-cased")
-
-ErnieDataset(PUBMED_TR, EMB_PATH, ANN_PATH, TOK)
+                logging.info('Yielding tensors')
+                yield input_ids, alignments, embeddings
