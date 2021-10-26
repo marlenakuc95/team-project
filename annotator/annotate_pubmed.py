@@ -10,7 +10,8 @@ import pandas as pd
 sys.path.append(str(Path(__file__).parent.parent.absolute()))
 
 from annotatorService import AnnotatorService
-from utils import ANNOTATOR_INPUT_DIR, ANNOTATIONS_DIR, DATASETS_DIR
+from utils import ANNOTATOR_INPUT_DIR, ANNOTATIONS_DIR
+from constants import DATASETS_DIR
 
 parser = argparse.ArgumentParser()
 # required parameters
