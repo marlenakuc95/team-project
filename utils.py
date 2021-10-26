@@ -1,11 +1,12 @@
-from pathlib import Path
+from constants import DATASETS_DIR, PROJECT_DIR
 
-PROJECT_DIR = Path(__file__).parent
 DATA_DIR = PROJECT_DIR.joinpath('data')
-DATASETS_DIR = PROJECT_DIR.joinpath('datasets')
+EMBEDDINGS_DIR = DATASETS_DIR.joinpath('embedds')
 PUBMED_DIR = DATASETS_DIR.joinpath('pubmed')
 ANNOTATOR_INPUT_DIR = PUBMED_DIR.joinpath('parsed_annotator')
 ANNOTATIONS_DIR = PUBMED_DIR.joinpath('annotations')
+CORRECTED_ANNOTATIONS_DIR = PUBMED_DIR.joinpath('annotations_corrected')
+TRAINING_DATA_DIR = PUBMED_DIR.joinpath('parsed_tr')
 
 
 # noinspection PyPep8Naming

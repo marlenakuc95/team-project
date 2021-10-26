@@ -2,7 +2,8 @@ import os
 
 import pandas as pd
 
-from utils import ANNOTATIONS_DIR, DATASETS_DIR
+from utils import ANNOTATIONS_DIR
+from constants import DATASETS_DIR
 
 EMBEDDINGS_PATH = DATASETS_DIR.joinpath('embedds').joinpath('GAN_embeddings.csv')
 
