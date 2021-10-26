@@ -7,6 +7,7 @@ EMBEDDINGS_DIR = DATASETS_DIR.joinpath('embedds')
 PUBMED_DIR = DATASETS_DIR.joinpath('pubmed')
 ANNOTATOR_INPUT_DIR = PUBMED_DIR.joinpath('parsed_annotator')
 ANNOTATIONS_DIR = PUBMED_DIR.joinpath('annotations')
+CORRECTED_ANNOTATIONS_DIR = PUBMED_DIR.joinpath('annotations_corrected')
 TRAINING_DATA_DIR = PUBMED_DIR.joinpath('parsed_tr')
 
 
