@@ -21,7 +21,6 @@ class ErnieDataset(IterableDataset):
 
         self.tokenizer = tokenizer
         self.data_folders = list(path_to_data.glob('**/*'))
-        self.doc_ids = []
         self.input_texts = []
         self.annotations = []
         self.embedding_table = pd.read_csv(str(path_to_emb), header=None).set_index(0)
@@ -44,7 +43,10 @@ class ErnieDataset(IterableDataset):
                 # Read data
                 logging.info(f'Loading text file {path}')
                 doc_id = path.stem.split('_parsed')[0]
-                self.doc_ids.append(doc_id)
+
+                # check if this document was removed from annotation df due to corrupt annoations
+                if doc_id not in annotation_df['document']:
+                    continue
 
                 with open(str(path), encoding="utf-8") as f:
                     input_text = f.read()
@@ -82,7 +84,7 @@ class ErnieDataset(IterableDataset):
                 loc_alignment_pt = torch.where(loc_alignment_pt == 0, -1, loc_alignment_pt)
 
                 # Compare local alignment with global alignment. If local == -1 and glob == 1, set local alignment to 0.
-                alignments = torch.where((loc_alignment_pt == -1) & (glob_align_pt == 1), 0, loc_alignment_pt)
+                alignments = torch.where((loc_alignment_pt == -1) & (glob_align_pt == 1), 0, loc_alignment_pt).float()
 
                 """ ENTITIES EMBEDDINGS"""
                 logging.info('Computing embedding tensor')
