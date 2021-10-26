@@ -30,7 +30,7 @@ def custom_collate(batch):
         max_len = alignments[0].size(0)
         max_inp_len = 512
         alignments = [
-            torch.cat((al, torch.zeros(max_len - al.size(0), max_inp_len)), 0) if al.size(0) != max_len else al
+            torch.cat((al, torch.zeros(max_len - al.size(0), max_inp_len)), 0).T if al.size(0) != max_len else al.T
             for al in alignments]
 
         # Padding with 0?
@@ -40,6 +40,8 @@ def custom_collate(batch):
 
         alignments = torch.stack(alignments, 0)
         embeddings = torch.stack(embeddings, 0)
+        if not (embeddings != 0).any():
+            print('')
         input_ids = torch.tensor(input_ids)
 
     logging.info('Loading collated batch')
