@@ -23,7 +23,6 @@ class ErnieDataset(IterableDataset):
         self.doc_ids = []
         self.input_texts = []
         self.annotations = []
-        self.annotation_df = None
         self.embedding_table = pd.read_csv(str(path_to_emb), header=None)
         self.data_path = path_to_data
         self.annotations_path = path_to_ann
@@ -37,8 +36,7 @@ class ErnieDataset(IterableDataset):
             annotations_file_path = str(
                 self.annotations_path.joinpath("annotations_" + file_dir.stem + "_parsed").with_suffix(".csv"))
             logging.info(f'Loading annotations file {annotations_file_path}')
-            # Read annotations and CORRECT OFFSETS!
-            self.annotation_df = pd.read_csv(annotations_file_path)
+            annotation_df = pd.read_csv(annotations_file_path)
 
             path_list = file_dir.glob('*.txt')
             for path in path_list:
@@ -65,7 +63,7 @@ class ErnieDataset(IterableDataset):
                 # Output: N_e x I (Values: 1 - aligned, 0 - non-aligned, (-1) - irrelevant)
 
                 logging.info('Computing alignment tensor')
-                entities = self.annotation_df[self.annotation_df['document'] == int(doc_id)]
+                entities = annotation_df[annotation_df['document'] == int(doc_id)]
                 entities_pt = torch.tensor(entities["moved_start"].values).unsqueeze(dim=1)
                 entities_pt = entities_pt.repeat(1, len(input_ids))
 

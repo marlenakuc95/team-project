@@ -6,11 +6,11 @@ from transformers import AutoModel, AutoTokenizer
 from transformers.adapters.configuration import AdapterConfig
 import logging
 from ErnieDataset import ErnieDataset
+from constants import BLURB_URI
 from custom_collate import custom_collate
-from utils import TRAINING_DATA_DIR, EMBEDDINGS_DIR, ANNOTATIONS_DIR, CORRECTED_ANNOTATIONS_DIR
+from utils import TRAINING_DATA_DIR, EMBEDDINGS_DIR, CORRECTED_ANNOTATIONS_DIR
 
 DEA_NAME = 'dEA'
-BLURB_URI = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"
 GAN_EMBEDDINGS_DIM = 50
 
 
