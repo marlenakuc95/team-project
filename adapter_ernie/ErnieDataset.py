@@ -2,6 +2,7 @@ import logging
 import os
 import pathlib
 
+import numpy as np
 import pandas as pd
 import torch
 from torch.utils.data import IterableDataset
@@ -23,7 +24,7 @@ class ErnieDataset(IterableDataset):
         self.doc_ids = []
         self.input_texts = []
         self.annotations = []
-        self.embedding_table = pd.read_csv(str(path_to_emb), header=None)
+        self.embedding_table = pd.read_csv(str(path_to_emb), header=None).set_index(0)
         self.data_path = path_to_data
         self.annotations_path = path_to_ann
         self.file_dir_names = os.listdir(self.data_path)
@@ -85,22 +86,11 @@ class ErnieDataset(IterableDataset):
 
                 """ ENTITIES EMBEDDINGS"""
                 logging.info('Computing embedding tensor')
-                embedd_subset = self.embedding_table.iloc[:, 0].isin(entities["CUI"].tolist())
-                embedd_subset = self.embedding_table[embedd_subset]
-                embeddings = []
 
-                for cui in entities["CUI"].tolist():
-                    # If cui is found, convert df row to tensor
-                    try:
-                        em = embedd_subset.loc[cui]
-                        embeddings.append(em.values)
-
-                    # If cui is not found, append tensor with zeroes
-                    except KeyError:
-                        embeddings.append([0] * 50)
-
-                # Convert to tensor
-                embeddings = torch.tensor(embeddings)
+                embeddings = torch.zeros((entities_size, self.embedding_table.shape[1]), dtype=torch.float32)
+                cuis_with_embeddings = entities['CUI'].isin(self.embedding_table.index)
+                embeddings[cuis_with_embeddings.values, :] = torch.tensor(
+                    self.embedding_table.loc[entities.loc[cuis_with_embeddings, 'CUI']].values.astype(np.float32))
 
                 logging.info('Yielding tensors')
                 yield input_ids, alignments, embeddings
