@@ -2,7 +2,6 @@ import logging
 import os
 import pathlib
 
-import numpy as np
 import pandas as pd
 import torch
 from torch.utils.data import IterableDataset
@@ -14,16 +13,14 @@ class ErnieDataset(IterableDataset):
 
     def __init__(self,
                  path_to_data: pathlib.Path,
-                 path_to_emb: pathlib.Path,
                  path_to_ann: pathlib.Path,
                  tokenizer
                  ):
 
         self.tokenizer = tokenizer
-        self.data_folders = list(path_to_data.glob('**/*'))
-        self.input_texts = []
-        self.annotations = []
-        self.embedding_table = pd.read_csv(str(path_to_emb), header=None).set_index(0)
+        # self.data_folders = list(path_to_data.glob('**/*'))
+        # self.input_texts = []
+        # self.annotations = []
         self.data_path = path_to_data
         self.annotations_path = path_to_ann
         self.file_dir_names = os.listdir(self.data_path)
@@ -37,6 +34,7 @@ class ErnieDataset(IterableDataset):
                 self.annotations_path.joinpath("annotations_" + file_dir.stem + "_parsed").with_suffix(".csv"))
             logging.info(f'Loading annotations file {annotations_file_path}')
             annotation_df = pd.read_csv(annotations_file_path)
+            annotated_doc_ids = set(annotation_df['document'])
 
             path_list = file_dir.glob('*.txt')
             for path in path_list:
@@ -44,8 +42,8 @@ class ErnieDataset(IterableDataset):
                 logging.info(f'Loading text file {path}')
                 doc_id = path.stem.split('_parsed')[0]
 
-                # check if this document was removed from annotation df due to corrupt annoations
-                if doc_id not in annotation_df['document']:
+                # check if this document was removed from annotation df due to corrupt annotations
+                if int(doc_id) not in annotated_doc_ids:
                     continue
 
                 with open(str(path), encoding="utf-8") as f:
@@ -54,7 +52,7 @@ class ErnieDataset(IterableDataset):
                 """ TRANSFORMER INPUT"""
                 logging.info('Tokenizing text')
                 encoding = self.tokenizer(text=input_text, return_offsets_mapping=True, max_length=512,
-                                          padding='max_length')
+                                          padding='max_length', truncation=True)
                 offsets = encoding["offset_mapping"]
                 input_ids = encoding["input_ids"]  # 512 x 1
 
@@ -86,13 +84,6 @@ class ErnieDataset(IterableDataset):
                 # Compare local alignment with global alignment. If local == -1 and glob == 1, set local alignment to 0.
                 alignments = torch.where((loc_alignment_pt == -1) & (glob_align_pt == 1), 0, loc_alignment_pt).float()
 
-                """ ENTITIES EMBEDDINGS"""
-                logging.info('Computing embedding tensor')
-
-                embeddings = torch.zeros((entities_size, self.embedding_table.shape[1]), dtype=torch.float32)
-                cuis_with_embeddings = entities['CUI'].isin(self.embedding_table.index)
-                embeddings[cuis_with_embeddings.values, :] = torch.tensor(
-                    self.embedding_table.loc[entities.loc[cuis_with_embeddings, 'CUI']].values.astype(np.float32))
-
                 logging.info('Yielding tensors')
-                yield input_ids, alignments, embeddings
+
+                yield input_ids, alignments, entities['CUI']
