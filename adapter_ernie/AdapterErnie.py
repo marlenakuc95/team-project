@@ -17,7 +17,20 @@ GAN_EMBEDDINGS_DIM = 50
 
 
 class AdapterErnie(pl.LightningModule):
-    def __init__(self, config):
+    def __init__(self):
+        config = {
+            'adapter_type': 'pfeiffer',
+            'adapter_non_linearity': 'relu',
+            'adapter_reduction_factor': 16,
+            'batch_size_train': 16,
+            'num_workers': 8,
+            # 'num_workers': 1,
+            'optimizer': torch.optim.AdamW,
+            'lr': 1e-2,
+            'weight_decay': 1e-3,
+            'dropout_prob': 0.5,
+        }
+
         logging.info('Initializing Adapter Ernie Model')
         super().__init__()
 
