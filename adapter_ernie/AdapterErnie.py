@@ -120,7 +120,7 @@ class AdapterErnie(pl.LightningModule):
             max_inp_len = 512
             alignments = [
                 # Todo: check if padding has to be changed to -1 instead of 0
-                torch.cat((al, torch.subtract(torch.zeros(max_len - al.size(0), 1), max_inp_len)), 0).T if al.size(0) != max_len else al.T
+                torch.cat((al, torch.subtract(torch.zeros(max_len - al.size(0), max_inp_len), 1)), 0).T if al.size(0) != max_len else al.T
                 for al in alignments]
 
         alignments = torch.stack(alignments, 0)

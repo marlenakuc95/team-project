@@ -52,7 +52,7 @@ wandb_logger = WandbLogger(save_dir=str((adapter_ernie_dir / 'wandb').absolute()
 trainer = pl.Trainer(
     logger=wandb_logger,
     callbacks=[early_stopping],
-    gpus='1',
+    gpus='0',
     # gpus=0,
 )
 
