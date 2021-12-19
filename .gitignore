@@ -19,4 +19,6 @@
 /data/umls-2021AA-metathesaurus.zip
 /data/test_data/
 /data/wikitext-2/
-/datasets/
+/data_collection/pubmed_parsing/
+/env
+/venv

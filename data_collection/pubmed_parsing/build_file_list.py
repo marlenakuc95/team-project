@@ -14,7 +14,7 @@ def build_pubmed_pointers():
     page = requests.get(URL)
 
     # Get list of links to be downloaded
-    soup = BeautifulSoup(page.content, 'html.parser')
+    soup = BeautifulSoup(page.content, 'html.basf_concept_parsing')
     file_tags = soup.findAll('a')[2:]
 
     urls = []

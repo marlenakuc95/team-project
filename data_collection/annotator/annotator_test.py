@@ -1,6 +1,6 @@
 import logging
 
-from annotator.annotatorService import AnnotatorService
+from data_collection.annotator.annotatorService import AnnotatorService
 from utils import ANNOTATOR_INPUT_DIR
 
 logging.basicConfig(

@@ -2,8 +2,8 @@ import logging
 import torch
 from torch import nn
 import pytorch_lightning as pl
-from evaluation.GeniaDataset import GeniaDataset
-from AdapterErnie import AdapterErnie
+from GeniaDataset import GeniaDataset
+from adapter_ernie.AdapterErnie import AdapterErnie
 from torch.utils.data import DataLoader
 from constants import BLURB_URI, PROJECT_DIR
 from transformers import AutoModel
