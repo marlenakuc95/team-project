@@ -22,3 +22,5 @@
 /data_collection/pubmed_parsing/
 /env
 /venv
+/pretraining/bert_model/runs
+/pretraining/sample_dataset
