@@ -1,7 +1,15 @@
 from torch.utils.data import Dataset
 from datasets import load_dataset
 from transformers import AutoTokenizer
+import os, sys
+import torch
+
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
 from constants import BLURB_URI
+
 
 class GeniaDataset(Dataset):
     def __init__(self, split: str):
@@ -18,13 +26,19 @@ class GeniaDataset(Dataset):
         tags = []
         for item in self.data:
             tags.append(item['ner_tags'])
-            tags = [item for sublist in tags for item in sublist]
+        tags = [val for sublist in tags for val in sublist]
         return len(set(tags))
 
     def __getitem__(self, i):
         words = self.data[i]['tokens']
         tags = self.data[i]['ner_tags']
-        tokenized_input = self.tokenizer(words, is_split_into_words=True)
+        tokenized_input = self.tokenizer(words,
+                                         is_split_into_words=True,
+                                         max_length=512,
+                                         padding='max_length',
+                                         truncation=True,
+                                         return_tensors='pt')
+
         tokenized_input_idx = tokenized_input.word_ids()
 
         label_ids = []
@@ -41,6 +55,9 @@ class GeniaDataset(Dataset):
                 label_ids.append(tags[idx])
                 start_word_idx = idx
 
-        tokenized_input['labels'] = label_ids
+        tokenized_input['input_ids'] = torch.squeeze(tokenized_input['input_ids'])
+        tokenized_input['token_type_ids'] = torch.squeeze(tokenized_input['token_type_ids'])
+        tokenized_input['attention_mask'] = torch.squeeze(tokenized_input['attention_mask'])
+        tokenized_input['labels'] = torch.Tensor(label_ids).type(torch.LongTensor)
 
         return tokenized_input
